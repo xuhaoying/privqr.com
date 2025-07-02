@@ -89,7 +89,7 @@ export default function ThreeDPage() {
       <Card className="mb-8 shadow-lg">
         <CardHeader>
           <CardTitle className="text-2xl">Generate 3D QR Code</CardTitle>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-700 dark:text-gray-300">
             Create QR codes optimized for 3D printing with customizable thickness and dimensions
           </p>
         </CardHeader>
@@ -194,7 +194,7 @@ export default function ThreeDPage() {
               
               <div>
                 <h3 className="font-semibold mb-2">Print Settings</h3>
-                <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
                   <p>• Layer Height: 0.2mm recommended</p>
                   <p>• Infill: 100% for durability</p>
                   <p>• Support: Not required</p>

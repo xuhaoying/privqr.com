@@ -55,11 +55,11 @@ export function Header() {
               href="https://github.com/xuhaoying/privqr.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-700"
+              className="text-gray-700 hover:text-gray-900"
             >
               GitHub
             </Link>
-            <button className="text-sm text-gray-500 hover:text-gray-700">
+            <button className="text-sm text-gray-700 hover:text-gray-900">
               EN
             </button>
           </div>

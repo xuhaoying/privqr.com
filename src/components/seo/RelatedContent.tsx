@@ -114,7 +114,7 @@ export function RelatedContent({ currentPage, maxItems = 4 }: RelatedContentProp
                 </h3>
               </CardHeader>
               <CardContent className="pt-0">
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
                   {item.description}
                 </p>
                 <Link href={item.href}>

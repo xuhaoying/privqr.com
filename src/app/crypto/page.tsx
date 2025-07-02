@@ -158,7 +158,7 @@ export default function CryptoPage() {
                   className={`px-6 py-3 text-sm font-medium border-b-2 transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'border-brand-500 text-brand-600 bg-brand-50'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                      : 'border-transparent text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                   }`}
                 >
                   {tab.label}

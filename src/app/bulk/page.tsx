@@ -116,7 +116,7 @@ export default function BulkPage() {
           >
             <div className="text-5xl mb-4">📄</div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Upload CSV File</h3>
-            <p className="text-gray-600 mb-4">Drop your CSV here or click to browse</p>
+            <p className="text-gray-700 mb-4">Drop your CSV here or click to browse</p>
             
             <input
               ref={fileInputRef}
@@ -222,7 +222,7 @@ export default function BulkPage() {
                       className="flex-1 border rounded p-3 text-center"
                     >
                       <div className="w-16 h-16 bg-gray-200 rounded mx-auto mb-2" />
-                      <p className="text-xs text-gray-600 truncate">
+                      <p className="text-xs text-gray-700 truncate">
                         {item.label || item.id}
                       </p>
                     </div>
@@ -230,7 +230,7 @@ export default function BulkPage() {
                   {totalItems > 3 && (
                     <div className="flex-1 border rounded p-3 text-center">
                       <div className="w-16 h-16 bg-gray-100 rounded mx-auto mb-2 flex items-center justify-center">
-                        <span className="text-gray-400">+{totalItems - 3}</span>
+                        <span className="text-gray-600">+{totalItems - 3}</span>
                       </div>
                     </div>
                   )}
@@ -244,7 +244,7 @@ export default function BulkPage() {
                 />
               </div>
               
-              <p className="text-xs text-gray-600 mt-2 text-center">
+              <p className="text-xs text-gray-700 mt-2 text-center">
                 {Math.round(progress)}% complete
               </p>
             </div>

@@ -21,7 +21,7 @@ export default function AboutPage() {
             <h2 className="text-xl font-semibold">Our Mission</h2>
           </CardHeader>
           <CardContent className="prose max-w-none">
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-700 mb-6">
               priv QR is dedicated to providing the most secure, privacy-focused, and professional QR code generation service available. We believe that your data should remain private, and our tools should work when you need them most.
             </p>
             
@@ -205,7 +205,7 @@ export default function AboutPage() {
 
         <div className="text-center mt-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to Get Started?</h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-700 mb-6">
             Join thousands of users who trust priv QR for their QR code needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

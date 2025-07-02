@@ -169,7 +169,7 @@ export default function MatterPage() {
                 maxLength={8}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
               />
-              <p className="text-xs text-gray-500 mt-1">8 digits, avoid sequential or repeated numbers</p>
+              <p className="text-xs text-gray-600 mt-1">8 digits, avoid sequential or repeated numbers</p>
             </div>
             
             <div>
@@ -183,7 +183,7 @@ export default function MatterPage() {
                 placeholder="3840"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
               />
-              <p className="text-xs text-gray-500 mt-1">0-4095 (12 bits)</p>
+              <p className="text-xs text-gray-600 mt-1">0-4095 (12 bits)</p>
             </div>
           </div>
 

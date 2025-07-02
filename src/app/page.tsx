@@ -76,7 +76,7 @@ export default function Home() {
         <h1 className="text-5xl font-bold bg-gradient-to-r from-brand-600 to-brand-800 bg-clip-text text-transparent mb-6">
           Professional QR Generator
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-700 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
           Zero dependencies • Offline-first • Privacy-focused • Industry standards
         </p>
 
@@ -98,7 +98,7 @@ export default function Home() {
         </BentoGrid>
 
         {/* Trust Badges */}
-        <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-600 dark:text-gray-300">
+        <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-700 dark:text-gray-300">
           {trustBadges.map((badge) => (
             <div key={badge.text} className="flex items-center space-x-2 bg-gray-50 dark:bg-gray-800 px-4 py-2 rounded-full">
               <span className="text-lg">{badge.icon}</span>
@@ -125,7 +125,7 @@ export default function Home() {
                 <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                   Absolute Privacy
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300">
                   All processing happens in your browser. Your sensitive data never touches our servers.
                 </p>
               </div>
@@ -136,7 +136,7 @@ export default function Home() {
                 <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                   Professional Features
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300">
                   Industry-standard formats, batch processing, and validation reports for serious users.
                 </p>
               </div>
@@ -147,7 +147,7 @@ export default function Home() {
                 <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                   Open Source
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300">
                   Fully transparent and auditable code. Verify our security claims yourself.
                 </p>
               </div>
@@ -161,7 +161,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
           Ready to start?
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">
+        <p className="text-gray-700 dark:text-gray-300 mb-8 max-w-xl mx-auto">
           Choose a tool above or try our most popular features
         </p>
         <div className="flex flex-wrap justify-center gap-4">

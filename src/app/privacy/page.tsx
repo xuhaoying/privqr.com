@@ -17,7 +17,7 @@ export default function PrivacyPage() {
             <CardTitle>Our Commitment to Privacy</CardTitle>
           </CardHeader>
           <CardContent className="prose max-w-none">
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-700 mb-6">
               Last updated: {new Date().toLocaleDateString()}
             </p>
             

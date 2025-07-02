@@ -20,7 +20,7 @@ export default function ContactPage() {
               <h2 className="text-xl font-semibold">Get in Touch</h2>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-700 mb-6">
                 We&apos;d love to hear from you! Whether you have questions, feedback, or need support, we&apos;re here to help.
               </p>
               
@@ -74,7 +74,7 @@ export default function ContactPage() {
                 </ShimmerButton>
               </div>
               
-              <p className="text-sm text-gray-500 mt-4">
+              <p className="text-sm text-gray-600 mt-4">
                 * This is a demo form. For actual contact, please use the methods listed on the right.
               </p>
             </CardContent>
@@ -89,12 +89,12 @@ export default function ContactPage() {
               </h3>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-700 mb-4">
                 For general inquiries and support:
               </p>
               <p className="font-medium">support@privqr.com</p>
               
-              <p className="text-gray-600 mb-2 mt-4">
+              <p className="text-gray-700 mb-2 mt-4">
                 For privacy-related questions:
               </p>
               <p className="font-medium">privacy@privqr.com</p>
@@ -108,7 +108,7 @@ export default function ContactPage() {
               </h3>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-700 mb-4">
                 Report bugs, request features, or contribute to development:
               </p>
               <a 
@@ -129,7 +129,7 @@ export default function ContactPage() {
               </h3>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-700 mb-4">
                 Before contacting us, check our comprehensive documentation:
               </p>
               <ul className="space-y-2">
@@ -188,7 +188,7 @@ export default function ContactPage() {
               </h3>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-700 mb-4">
                 Join our community for discussions, tips, and peer support:
               </p>
               <ul className="space-y-2">

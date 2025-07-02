@@ -72,7 +72,7 @@ export function QRPreview({ result, loading, label }: QRPreviewProps) {
                 />
               )}
             </div>
-            <p className="text-sm text-gray-600 mb-4">
+            <p className="text-sm text-gray-700 mb-4">
               {label || 'QR Code generated'} • Offline generated
             </p>
           </>
@@ -86,10 +86,10 @@ export function QRPreview({ result, loading, label }: QRPreviewProps) {
         ) : (
           <div className="w-64 h-64 mx-auto bg-gray-100 rounded-lg flex items-center justify-center">
             <div className="text-center">
-              <div className="text-4xl mb-2 text-gray-400">⬜⬛⬜⬛⬜</div>
-              <div className="text-4xl mb-2 text-gray-400">⬛⬜⬛⬜⬛</div>
-              <div className="text-4xl mb-2 text-gray-400">⬜⬛⬜⬛⬜</div>
-              <p className="text-sm text-gray-500">QR Preview</p>
+              <div className="text-4xl mb-2 text-gray-500">⬜⬛⬜⬛⬜</div>
+              <div className="text-4xl mb-2 text-gray-500">⬛⬜⬛⬜⬛</div>
+              <div className="text-4xl mb-2 text-gray-500">⬜⬛⬜⬛⬜</div>
+              <p className="text-sm text-gray-600">QR Preview</p>
             </div>
           </div>
         )}
