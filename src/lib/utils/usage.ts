@@ -1,8 +1,8 @@
 import { GenerationStats } from '@/types/qr';
 
 const STORAGE_KEY = 'qr_toolkit_usage';
-const DAILY_LIMIT = 50;
-const BATCH_LIMIT = 20;
+const DAILY_LIMIT = 999999;
+const BATCH_LIMIT = 999999;
 
 export class UsageTracker {
   private static instance: UsageTracker;
@@ -44,18 +44,15 @@ export class UsageTracker {
   }
 
   canGenerate(count: number = 1): boolean {
-    const stats = this.getStats();
-    return stats.dailyCount + count <= stats.dailyLimit;
+    return true; // Always allow generation - unlimited
   }
 
   canBatch(count: number): boolean {
-    const stats = this.getStats();
-    return count <= stats.batchLimit && this.canGenerate(count);
+    return true; // Always allow batch processing - unlimited
   }
 
   getRemainingDaily(): number {
-    const stats = this.getStats();
-    return Math.max(0, stats.dailyLimit - stats.dailyCount);
+    return 999999; // Always return unlimited remaining
   }
 
   private getStoredStats(): GenerationStats {

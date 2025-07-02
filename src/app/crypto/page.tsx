@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { QuotaInfo } from '@/components/ui/QuotaInfo';
 import { QRPreviewEnhanced } from '@/components/qr/QRPreview-enhanced';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -16,7 +15,6 @@ import { CryptoType, BitcoinPaymentRequest, EthereumPaymentRequest, LightningInv
 import { QRGenerationResult } from '@/types/qr';
 import { CryptoQRGenerator } from '@/lib/crypto/generator';
 import { QRGenerator } from '@/lib/qr/generator';
-import { UsageTracker } from '@/lib/utils/usage';
 import { Bitcoin, Zap, Cpu, Shield, TrendingUp, Globe } from 'lucide-react';
 
 type Tab = 'bitcoin' | 'ethereum' | 'lightning';
@@ -73,15 +71,6 @@ export default function CryptoPageEnhanced() {
   const [lnInvoice, setLnInvoice] = useState('');
 
   const handleGenerate = async () => {
-    const tracker = UsageTracker.getInstance();
-    if (!tracker.canGenerate()) {
-      setResult({
-        success: false,
-        error: 'Daily limit reached. Please upgrade or try again tomorrow.',
-      });
-      return;
-    }
-
     setLoading(true);
     setResult(null);
 
@@ -156,9 +145,6 @@ export default function CryptoPageEnhanced() {
       const generator = QRGenerator.getInstance();
       const qrResult = await generator.generateQR(cryptoOptions);
       
-      if (qrResult.success) {
-        tracker.incrementDaily();
-      }
       
       setResult(qrResult);
     } catch (error) {
@@ -227,7 +213,6 @@ export default function CryptoPageEnhanced() {
         ))}
       </motion.div>
 
-      <QuotaInfo />
 
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Form Section */}

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { QuotaInfo } from '@/components/ui/QuotaInfo';
 import { QRPreviewEnhanced } from '@/components/qr/QRPreview-enhanced';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -16,7 +15,6 @@ import { MatterDeviceInfo, MatterValidationResult } from '@/types/matter';
 import { QRGenerationResult } from '@/types/qr';
 import { MatterQRGenerator } from '@/lib/matter/generator';
 import { QRGenerator } from '@/lib/qr/generator';
-import { UsageTracker } from '@/lib/utils/usage';
 import { Cpu, Zap, Shield, Radio, Smartphone, CheckCircle2, AlertTriangle, Download } from 'lucide-react';
 
 const matterStats = [
@@ -43,15 +41,6 @@ export default function MatterPageEnhanced() {
   const [generateNdef, setGenerateNdef] = useState(false);
 
   const handleGenerate = async () => {
-    const tracker = UsageTracker.getInstance();
-    if (!tracker.canGenerate()) {
-      setResult({
-        success: false,
-        error: 'Daily limit reached. Please upgrade or try again tomorrow.',
-      });
-      return;
-    }
-
     setLoading(true);
     setResult(null);
     setValidation(null);
@@ -85,9 +74,6 @@ export default function MatterPageEnhanced() {
       const generator = QRGenerator.getInstance();
       const qrResult = await generator.generateQR(matterOptions);
       
-      if (qrResult.success) {
-        tracker.incrementDaily();
-      }
       
       setResult(qrResult);
     } catch (error) {
@@ -193,7 +179,6 @@ export default function MatterPageEnhanced() {
         ))}
       </motion.div>
 
-      <QuotaInfo />
 
       <div className="grid lg:grid-cols-2 gap-8">
 

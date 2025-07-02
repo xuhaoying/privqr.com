@@ -13,7 +13,6 @@ import { TextEffect } from '@/components/magicui/text-effect';
 import NumberTicker from '@/components/magicui/number-ticker';
 import { QRGenerationResult } from '@/types/qr';
 import { QRGenerator } from '@/lib/qr/generator';
-import { UsageTracker } from '@/lib/utils/usage';
 import { Printer, Box, Layers, Ruler, Download, CheckCircle2, Settings, Zap } from 'lucide-react';
 
 const threeDStats = [
@@ -32,15 +31,6 @@ export default function ThreeDPageEnhanced() {
   const [result, setResult] = useState<QRGenerationResult | null>(null);
 
   const handleGenerate = async () => {
-    const tracker = UsageTracker.getInstance();
-    if (!tracker.canGenerate()) {
-      setResult({
-        success: false,
-        error: 'Daily limit reached. Please upgrade or try again tomorrow.',
-      });
-      return;
-    }
-
     if (!content.trim()) {
       setResult({
         success: false,
@@ -61,9 +51,6 @@ export default function ThreeDPageEnhanced() {
         errorCorrectionLevel: 'H', // High error correction for 3D printing
       });
 
-      if (qrResult.success) {
-        tracker.incrementDaily();
-      }
 
       setResult(qrResult);
     } catch (error) {

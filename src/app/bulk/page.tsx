@@ -91,17 +91,13 @@ export default function BulkPageEnhanced() {
         },
       };
 
-      // Check quota before processing
+      // Process CSV file - no limits for free users!
       const fileContent = await file.text();
       const rows = fileContent.split('\n').filter(row => row.trim()).length - 1; // Subtract header
-      
-      if (!tracker.canBatch(rows)) {
-        throw new Error(`Batch size exceeds daily limit. You can process ${tracker.getRemainingDaily()} more items today.`);
-      }
 
       await processor.current.processCSV(file, options);
       
-      // Update usage stats
+      // Update usage stats (for analytics only)
       tracker.incrementBatch(rows);
       
     } catch (err) {
