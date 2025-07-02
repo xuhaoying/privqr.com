@@ -24,11 +24,11 @@ export function Header() {
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative w-8 h-8">
               <Image
-                src="/logo.png"
+                src="/logo-transparent.svg"
                 alt="priv QR"
                 fill
                 className="object-contain"
-                style={{ filter: 'drop-shadow(0 0 0 transparent)' }}
+                priority
               />
             </div>
             <span className="text-xl font-bold text-gray-900">priv QR</span>

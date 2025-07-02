@@ -9,30 +9,52 @@
   
   <rect width="1200" height="630" fill="url(#bgGradient)"/>
   
-  <!-- Logo placeholder -->
-  <g transform="translate(100, 200)">
-    <!-- Shield shape similar to logo -->
-    <path d="M0 0 h100 c10 0 20 10 20 20 v60 c0 40 -20 80 -70 100 c-50 -20 -70 -60 -70 -100 v-60 c0 -10 10 -20 20 -20 z" 
+  <!-- Logo with transparent background -->
+  <g transform="translate(150, 250) scale(0.4)">
+    <!-- Shield path -->
+    <path d="M-120,-180 L120,-180 C140,-180 160,-160 160,-140 L160,-20 C160,80 80,160 0,200 C-80,160 -160,80 -160,-20 L-160,-140 C-160,-160 -140,-180 -120,-180 Z" 
           fill="#10d9a3" stroke="none"/>
     
-    <!-- QR-like pattern inside shield -->
-    <rect x="20" y="30" width="60" height="60" fill="#1e293b" rx="4"/>
-    <rect x="25" y="35" width="10" height="10" fill="#10d9a3"/>
-    <rect x="40" y="35" width="10" height="10" fill="#10d9a3"/>
-    <rect x="55" y="35" width="10" height="10" fill="#10d9a3"/>
-    <rect x="70" y="35" width="5" height="10" fill="#10d9a3"/>
+    <!-- QR code pattern inside shield -->
+    <!-- Top row -->
+    <rect x="-100" y="-140" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="-50" y="-140" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="0" y="-140" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="50" y="-140" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="100" y="-140" width="20" height="40" fill="#1e293b" rx="4"/>
     
-    <rect x="25" y="50" width="10" height="10" fill="#10d9a3"/>
-    <rect x="55" y="50" width="10" height="10" fill="#10d9a3"/>
+    <!-- Middle row with lock -->
+    <rect x="-100" y="-90" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="60" y="-90" width="40" height="40" fill="#1e293b" rx="4"/>
     
-    <rect x="25" y="65" width="10" height="10" fill="#10d9a3"/>
-    <rect x="40" y="65" width="10" height="10" fill="#10d9a3"/>
-    <rect x="55" y="65" width="10" height="10" fill="#10d9a3"/>
-    <rect x="70" y="65" width="5" height="10" fill="#10d9a3"/>
+    <!-- Lock symbol in center -->
+    <g transform="translate(0, -40)">
+      <!-- Lock shackle -->
+      <path d="M-15,-15 L-15,-25 C-15,-35 -10,-40 0,-40 C10,-40 15,-35 15,-25 L15,-15" 
+            fill="none" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+      <!-- Lock body -->
+      <rect x="-20" y="-15" width="40" height="30" fill="#1e293b" rx="4"/>
+      <!-- Keyhole -->
+      <circle cx="0" cy="-5" r="4" fill="#10d9a3"/>
+      <rect x="-2" y="-5" width="4" height="10" fill="#10d9a3"/>
+    </g>
     
-    <!-- Lock symbol -->
-    <circle cx="50" cy="55" r="8" fill="#1e293b"/>
-    <rect x="47" y="58" width="6" height="8" fill="#10d9a3" rx="1"/>
+    <!-- Bottom rows -->
+    <rect x="-100" y="-40" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="60" y="-40" width="40" height="40" fill="#1e293b" rx="4"/>
+    
+    <rect x="-100" y="10" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="-50" y="10" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="0" y="10" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="50" y="10" width="40" height="40" fill="#1e293b" rx="4"/>
+    
+    <rect x="-100" y="60" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="-50" y="60" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="50" y="60" width="40" height="40" fill="#1e293b" rx="4"/>
+    <rect x="100" y="60" width="20" height="40" fill="#1e293b" rx="4"/>
+    
+    <!-- Bottom center vertical line -->
+    <rect x="-10" y="100" width="20" height="60" fill="#1e293b" rx="4"/>
   </g>
   
   <!-- Title -->

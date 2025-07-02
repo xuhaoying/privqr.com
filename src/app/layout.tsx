@@ -22,11 +22,21 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/logo-icon.svg', sizes: '32x32', type: 'image/svg+xml' },
+      { url: '/logo-transparent.svg', sizes: '192x192', type: 'image/svg+xml' },
+      { url: '/logo-transparent.svg', sizes: '512x512', type: 'image/svg+xml' },
     ],
-    apple: { url: '/logo.png', sizes: '180x180' },
+    apple: { url: '/logo-transparent.svg', sizes: '180x180', type: 'image/svg+xml' },
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+        color: '#10d9a3',
+      },
+    ],
   },
+  manifest: '/manifest.json',
   openGraph: {
     title: "priv QR - Professional QR Code Generator",
     description: "Generate professional QR codes offline with zero dependencies. Privacy-first QR generation for crypto, IoT, and bulk processing.",
@@ -59,6 +69,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEXWW1VQ76"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-MEXWW1VQ76');
+            `,
+          }}
+        />
         <OrganizationSchema />
         <WebAppSchema />
       </head>

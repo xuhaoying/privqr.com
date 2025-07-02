@@ -1,0 +1,23 @@
+{
+  "name": "priv QR - Professional QR Code Generator",
+  "short_name": "priv QR",
+  "description": "Privacy-first professional QR code generator for crypto, IoT, and bulk processing",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10d9a3",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-transparent.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
