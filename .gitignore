@@ -1,5 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Private documents and specifications
+/PRD/
+/.specstory/
+QUALITY_REPORT.md
 # dependencies
 /node_modules
 /.pnp
