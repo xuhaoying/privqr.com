@@ -1,4 +1,4 @@
-# QR Toolkit - Professional QR Code Generator
+# priv QR - Professional QR Code Generator
 
 🔒 **Zero dependencies** • ⚡ **Offline-first** • 🌐 **Privacy-focused**
 
@@ -224,4 +224,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ by the QR Toolkit Team
+Made with ❤️ by the priv QR Team

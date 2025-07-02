@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata = {
-  title: 'Privacy Policy | QR Toolkit',
-  description: 'Privacy policy for QR Toolkit - Learn how we protect your data and ensure complete privacy.',
+  title: 'Privacy Policy | priv QR',
+  description: 'Privacy policy for priv QR - Learn how we protect your data and ensure complete privacy.',
 };
 
 export default function PrivacyPage() {
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
             </p>
             
             <p>
-              At QR Toolkit, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our QR code generation service.
+              At priv QR, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our QR code generation service.
             </p>
           </CardContent>
         </Card>

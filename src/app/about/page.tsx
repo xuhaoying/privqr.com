@@ -3,15 +3,15 @@ import { ShimmerButton } from '@/components/ui/shimmer-button';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'About Us | QR Toolkit',
-  description: 'Learn about QR Toolkit - The privacy-first, professional QR code generator for developers, businesses, and crypto users.',
+  title: 'About Us | priv QR',
+  description: 'Learn about priv QR - The privacy-first, professional QR code generator for developers, businesses, and crypto users.',
 };
 
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-8">
-        About QR Toolkit
+        About priv QR
       </h1>
       
       <div className="space-y-8">
@@ -21,7 +21,7 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent className="prose max-w-none">
             <p className="text-lg text-gray-600 mb-6">
-              QR Toolkit is dedicated to providing the most secure, privacy-focused, and professional QR code generation service available. We believe that your data should remain private, and our tools should work when you need them most.
+              priv QR is dedicated to providing the most secure, privacy-focused, and professional QR code generation service available. We believe that your data should remain private, and our tools should work when you need them most.
             </p>
             
             <p>
@@ -65,7 +65,7 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <p>
-                Once loaded, QR Toolkit works completely offline. Generate QR codes anywhere, anytime - no internet connection required.
+                Once loaded, priv QR works completely offline. Generate QR codes anywhere, anytime - no internet connection required.
               </p>
             </CardContent>
           </Card>
@@ -102,7 +102,7 @@ export default function AboutPage() {
 
             <h3>Built by Developers, for Everyone</h3>
             <p>
-              Our team understands the frustration of QR tools that don&apos;t work when you need them, compromise your privacy, or lack the features professionals require. That&apos;s why we built QR Toolkit with:
+              Our team understands the frustration of QR tools that don&apos;t work when you need them, compromise your privacy, or lack the features professionals require. That&apos;s why we built priv QR with:
             </p>
             <ul>
               <li>Open source transparency</li>
@@ -120,7 +120,7 @@ export default function AboutPage() {
           <CardContent className="prose max-w-none">
             <h3>Technical Excellence</h3>
             <p>
-              QR Toolkit is built with modern web technologies to ensure maximum performance, security, and compatibility:
+              priv QR is built with modern web technologies to ensure maximum performance, security, and compatibility:
             </p>
             
             <div className="grid md:grid-cols-2 gap-6 mt-4">
@@ -161,7 +161,7 @@ export default function AboutPage() {
           <CardContent className="prose max-w-none">
             <h3>Open Source</h3>
             <p>
-              QR Toolkit is fully open source. We believe in transparency and community-driven development. You can:
+              priv QR is fully open source. We believe in transparency and community-driven development. You can:
             </p>
             <ul>
               <li>View our source code on GitHub</li>
@@ -184,7 +184,7 @@ export default function AboutPage() {
             <CardTitle>Future Roadmap</CardTitle>
           </CardHeader>
           <CardContent className="prose max-w-none">
-            <p>We&apos;re continuously improving QR Toolkit with new features and capabilities:</p>
+            <p>We&apos;re continuously improving priv QR with new features and capabilities:</p>
             
             <h3>Coming Soon</h3>
             <ul>
@@ -205,7 +205,7 @@ export default function AboutPage() {
         <div className="text-center mt-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to Get Started?</h2>
           <p className="text-gray-600 mb-6">
-            Join thousands of users who trust QR Toolkit for their QR code needs.
+            Join thousands of users who trust priv QR for their QR code needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/crypto">

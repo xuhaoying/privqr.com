@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata = {
-  title: 'Terms of Service | QR Toolkit',
-  description: 'Terms of Service for QR Toolkit - Usage guidelines and legal terms for our QR code generation service.',
+  title: 'Terms of Service | priv QR',
+  description: 'Terms of Service for priv QR - Usage guidelines and legal terms for our QR code generation service.',
 };
 
 export default function TermsPage() {
@@ -21,7 +21,7 @@ export default function TermsPage() {
             </p>
             
             <p>
-              By accessing and using QR Toolkit (&quot;Service&quot;), you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you disagree with any part of these terms, then you may not access the Service.
+              By accessing and using priv QR (&quot;Service&quot;), you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you disagree with any part of these terms, then you may not access the Service.
             </p>
           </CardContent>
         </Card>
@@ -32,7 +32,7 @@ export default function TermsPage() {
           </CardHeader>
           <CardContent className="prose max-w-none">
             <p>
-              QR Toolkit is a free, privacy-focused QR code generation service that provides:
+              priv QR is a free, privacy-focused QR code generation service that provides:
             </p>
             <ul>
               <li>Professional QR code generation for various use cases</li>
@@ -131,7 +131,7 @@ export default function TermsPage() {
 
             <h3>Our Service</h3>
             <p>
-              The QR Toolkit service, including its code, design, and functionality, is protected by intellectual property rights. Our source code is available under an open source license.
+              The priv QR service, including its code, design, and functionality, is protected by intellectual property rights. Our source code is available under an open source license.
             </p>
 
             <h3>Generated QR Codes</h3>
@@ -174,7 +174,7 @@ export default function TermsPage() {
           </CardHeader>
           <CardContent className="prose max-w-none">
             <p>
-              To the maximum extent permitted by law, QR Toolkit shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.
+              To the maximum extent permitted by law, priv QR shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.
             </p>
           </CardContent>
         </Card>

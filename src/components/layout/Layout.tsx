@@ -16,7 +16,7 @@ export function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-6">
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">QR Toolkit</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">priv QR</h3>
               <p className="text-sm text-gray-600">
                 Privacy-first QR code generator for professionals
               </p>
@@ -53,7 +53,7 @@ export function Layout({ children }: LayoutProps) {
               🔒 Your data never leaves your browser
             </p>
             <p className="text-sm text-gray-500">
-              © 2024 QR Toolkit · Open Source · Privacy First
+              © 2024 priv QR · Open Source · Privacy First
             </p>
           </div>
         </div>

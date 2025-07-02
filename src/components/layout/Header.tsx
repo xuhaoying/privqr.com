@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export function Header() {
@@ -20,8 +21,17 @@ export function Header() {
     <header className="bg-white border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-bold text-gray-900">
-            QR Toolkit
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="relative w-8 h-8">
+              <Image
+                src="/logo.png"
+                alt="priv QR"
+                fill
+                className="object-contain"
+                style={{ filter: 'drop-shadow(0 0 0 transparent)' }}
+              />
+            </div>
+            <span className="text-xl font-bold text-gray-900">priv QR</span>
           </Link>
           
           <nav className="hidden md:flex space-x-1">

@@ -3,8 +3,8 @@ import { Input } from '@/components/ui/input';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 
 export const metadata = {
-  title: 'Contact Us | QR Toolkit',
-  description: 'Get in touch with the QR Toolkit team. We\'re here to help with questions, feedback, and support.',
+  title: 'Contact Us | priv QR',
+  description: 'Get in touch with the priv QR team. We\'re here to help with questions, feedback, and support.',
 };
 
 export default function ContactPage() {

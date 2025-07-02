@@ -58,11 +58,11 @@ const trustBadges = [
 ];
 
 export const metadata = {
-  title: 'QR Toolkit - Professional QR Code Generator | Free, Privacy-First',
+  title: 'priv QR - Professional QR Code Generator | Free, Privacy-First',
   description: 'Generate professional QR codes instantly with our privacy-first tool. Support for crypto payments (Bitcoin, Ethereum), IoT devices, bulk processing, and 3D printing. 100% free and works offline.',
   keywords: 'free QR code generator, professional QR codes, crypto QR codes, Bitcoin QR, Ethereum QR, bulk QR generator, IoT QR codes, Matter device codes, privacy QR generator',
   openGraph: {
-    title: 'QR Toolkit - Professional QR Code Generator',
+    title: 'priv QR - Professional QR Code Generator',
     description: 'Create professional QR codes for crypto, IoT, and business use. Privacy-first, works offline, completely free.',
   },
 };
@@ -112,7 +112,7 @@ export default function Home() {
         <Card className="bg-gradient-to-r from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 border-0 shadow-lg">
           <CardHeader>
             <CardTitle className="text-3xl font-bold text-center mb-8">
-              Why QR Toolkit?
+              Why priv QR?
             </CardTitle>
           </CardHeader>
           <CardContent>
