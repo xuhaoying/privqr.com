@@ -1,10 +1,9 @@
 import { MetadataRoute } from 'next'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default function sitemapMain(): MetadataRoute.Sitemap {
   const baseUrl = 'https://privqr.com'
   const currentDate = new Date()
   
-  // Enhanced sitemap with additional metadata
   return [
     {
       url: baseUrl,
@@ -15,54 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           en: baseUrl,
           zh: `${baseUrl}/zh`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/crypto`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-      alternates: {
-        languages: {
-          en: `${baseUrl}/crypto`,
-          zh: `${baseUrl}/zh/crypto`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/matter`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      alternates: {
-        languages: {
-          en: `${baseUrl}/matter`,
-          zh: `${baseUrl}/zh/matter`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/bulk`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      alternates: {
-        languages: {
-          en: `${baseUrl}/bulk`,
-          zh: `${baseUrl}/zh/bulk`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/3d`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-      alternates: {
-        languages: {
-          en: `${baseUrl}/3d`,
-          zh: `${baseUrl}/zh/3d`,
         },
       },
     },
