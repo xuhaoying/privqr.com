@@ -82,7 +82,7 @@ export default function ThreeDPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-8">
+      <h1 className="text-4xl font-bold bg-gradient-to-r from-brand-600 to-brand-800 bg-clip-text text-transparent mb-8">
         3D Printable QR Codes
       </h1>
 
@@ -154,7 +154,7 @@ export default function ThreeDPage() {
             <ShimmerButton
               onClick={handleGenerate}
               disabled={loading}
-              background="rgba(147, 51, 234, 1)"
+              background="rgba(16, 217, 163, 1)"
               className="px-8 py-3 text-white disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Generating...' : 'Generate 3D QR Code'}
@@ -179,7 +179,7 @@ export default function ThreeDPage() {
                 <div className="space-y-2">
                   <button
                     onClick={handleDownloadSTL}
-                    className="w-full px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition-colors"
+                    className="w-full px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600 transition-colors"
                   >
                     Download STL File
                   </button>
@@ -206,9 +206,9 @@ export default function ThreeDPage() {
         </Card>
       )}
 
-      <Card className="mt-8 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-800/20 border-purple-200 dark:border-purple-800">
+      <Card className="mt-8 bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-900/20 dark:to-brand-800/20 border-brand-200 dark:border-brand-800">
         <CardContent>
-          <p className="text-sm text-purple-800 dark:text-purple-300 flex items-center gap-2">
+          <p className="text-sm text-brand-800 dark:text-brand-300 flex items-center gap-2">
             <span className="text-lg">🖨️</span>
             3D printed QR codes work best with high contrast materials. Use white or light-colored filament for the base and dark filament for the raised areas.
           </p>

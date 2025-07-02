@@ -61,13 +61,13 @@ export default function ContactPage() {
                   </label>
                   <textarea
                     rows={6}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 dark:border-gray-600"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800 dark:border-gray-600"
                     placeholder="Tell us more about your question or feedback..."
                   />
                 </div>
                 
                 <ShimmerButton
-                  background="rgba(59, 130, 246, 1)"
+                  background="rgba(16, 217, 163, 1)"
                   className="w-full text-white"
                 >
                   Send Message
@@ -115,7 +115,7 @@ export default function ContactPage() {
                 href="https://github.com/xuhaoying/privqr.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="font-medium text-blue-600 hover:text-blue-800"
+                className="font-medium text-brand-600 hover:text-brand-800"
               >
                 github.com/xuhaoying/privqr.com
               </a>
@@ -134,22 +134,22 @@ export default function ContactPage() {
               </p>
               <ul className="space-y-2">
                 <li>
-                  <a href="/docs/USER_GUIDE.md" className="text-blue-600 hover:text-blue-800">
+                  <a href="/docs/USER_GUIDE.md" className="text-brand-600 hover:text-brand-800">
                     User Guide
                   </a>
                 </li>
                 <li>
-                  <a href="/docs/CRYPTO_GUIDE.md" className="text-blue-600 hover:text-blue-800">
+                  <a href="/docs/CRYPTO_GUIDE.md" className="text-brand-600 hover:text-brand-800">
                     Crypto QR Guide
                   </a>
                 </li>
                 <li>
-                  <a href="/docs/BULK_GUIDE.md" className="text-blue-600 hover:text-blue-800">
+                  <a href="/docs/BULK_GUIDE.md" className="text-brand-600 hover:text-brand-800">
                     Bulk Processing Guide
                   </a>
                 </li>
                 <li>
-                  <a href="/docs/TROUBLESHOOTING.md" className="text-blue-600 hover:text-blue-800">
+                  <a href="/docs/TROUBLESHOOTING.md" className="text-brand-600 hover:text-brand-800">
                     Troubleshooting
                   </a>
                 </li>
@@ -193,12 +193,12 @@ export default function ContactPage() {
               </p>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-brand-600 hover:text-brand-800">
                     GitHub Discussions
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-brand-600 hover:text-brand-800">
                     Discord Community (Coming Soon)
                   </a>
                 </li>
@@ -206,17 +206,17 @@ export default function ContactPage() {
             </CardContent>
           </Card>
           
-          <Card className="bg-blue-50 border-blue-200">
+          <Card className="bg-brand-50 border-brand-200">
             <CardHeader>
-              <h3 className="flex items-center gap-2 text-lg font-semibold text-blue-800">
+              <h3 className="flex items-center gap-2 text-lg font-semibold text-brand-800">
                 💡 Quick Help
               </h3>
             </CardHeader>
             <CardContent>
-              <p className="text-blue-700 text-sm">
+              <p className="text-brand-700 text-sm">
                 <strong>Common Questions:</strong>
               </p>
-              <ul className="text-sm text-blue-600 space-y-1 mt-2">
+              <ul className="text-sm text-brand-600 space-y-1 mt-2">
                 <li>• All data processing happens in your browser</li>
                 <li>• Daily limit: 50 QR codes, Batch limit: 20</li>
                 <li>• Works completely offline after first load</li>

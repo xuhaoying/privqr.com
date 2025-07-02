@@ -112,7 +112,7 @@ export default function BulkPage() {
           <div
             onDrop={handleDrop}
             onDragOver={(e) => e.preventDefault()}
-            className="border-2 border-dashed border-blue-300 rounded-lg p-8 text-center mb-6 bg-gray-50 hover:bg-blue-50 transition-colors"
+            className="border-2 border-dashed border-brand-300 rounded-lg p-8 text-center mb-6 bg-gray-50 hover:bg-brand-50 transition-colors"
           >
             <div className="text-5xl mb-4">📄</div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Upload CSV File</h3>
@@ -128,7 +128,7 @@ export default function BulkPage() {
             
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+              className="px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600"
             >
               Choose File
             </button>
@@ -161,7 +161,7 @@ export default function BulkPage() {
                 <select
                   value={format}
                   onChange={(e) => setFormat(e.target.value as 'png' | 'svg')}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
                 >
                   <option value="png">PNG</option>
                   <option value="svg">SVG</option>
@@ -175,7 +175,7 @@ export default function BulkPage() {
                 <select
                   value={size}
                   onChange={(e) => setSize(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
                 >
                   <option value="200">200x200</option>
                   <option value="400">400x400</option>
@@ -190,7 +190,7 @@ export default function BulkPage() {
                   type="checkbox"
                   checked={includeLabels}
                   onChange={(e) => setIncludeLabels(e.target.checked)}
-                  className="mr-2 text-blue-600"
+                  className="mr-2 text-brand-600"
                 />
                 <span className="text-sm text-gray-700">Include labels in filenames</span>
               </label>
@@ -200,7 +200,7 @@ export default function BulkPage() {
                   type="checkbox"
                   checked={errorCorrection}
                   onChange={(e) => setErrorCorrection(e.target.checked)}
-                  className="mr-2 text-blue-600"
+                  className="mr-2 text-brand-600"
                 />
                 <span className="text-sm text-gray-700">High error correction</span>
               </label>
@@ -262,7 +262,7 @@ export default function BulkPage() {
             <button
               onClick={handleProcess}
               disabled={!file || processing}
-              className="flex-1 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {processing ? 'Processing...' : 'Start Generation'}
             </button>
@@ -277,9 +277,9 @@ export default function BulkPage() {
         </div>
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-        <h3 className="text-sm font-semibold text-blue-900 mb-2">CSV Format Guide</h3>
-        <pre className="text-xs text-blue-800 overflow-x-auto">
+      <div className="bg-brand-50 border border-brand-200 rounded-lg p-4">
+        <h3 className="text-sm font-semibold text-brand-900 mb-2">CSV Format Guide</h3>
+        <pre className="text-xs text-brand-800 overflow-x-auto">
 {`type,data,label
 url,https://example.com,Example Website
 text,Hello World,Sample Text

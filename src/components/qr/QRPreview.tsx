@@ -53,7 +53,7 @@ export function QRPreview({ result, loading, label }: QRPreviewProps) {
       <div className="text-center">
         {loading ? (
           <div className="w-64 h-64 mx-auto bg-gray-100 rounded-lg flex items-center justify-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500" />
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-500" />
           </div>
         ) : result?.success && result.data ? (
           <>
@@ -100,7 +100,7 @@ export function QRPreview({ result, loading, label }: QRPreviewProps) {
           <button
             onClick={() => handleDownload('png')}
             disabled={downloading}
-            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:opacity-50"
+            className="px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600 disabled:opacity-50"
           >
             Download PNG
           </button>

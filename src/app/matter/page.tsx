@@ -140,7 +140,7 @@ export default function MatterPage() {
                 value={vendorId}
                 onChange={(e) => setVendorId(e.target.value)}
                 placeholder="0xFFF1"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
               />
             </div>
             
@@ -153,7 +153,7 @@ export default function MatterPage() {
                 value={productId}
                 onChange={(e) => setProductId(e.target.value)}
                 placeholder="0x8001"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
               />
             </div>
             
@@ -167,7 +167,7 @@ export default function MatterPage() {
                 onChange={(e) => setSetupPin(e.target.value)}
                 placeholder="20202021"
                 maxLength={8}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
               />
               <p className="text-xs text-gray-500 mt-1">8 digits, avoid sequential or repeated numbers</p>
             </div>
@@ -181,7 +181,7 @@ export default function MatterPage() {
                 value={discriminator}
                 onChange={(e) => setDiscriminator(e.target.value)}
                 placeholder="3840"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
               />
               <p className="text-xs text-gray-500 mt-1">0-4095 (12 bits)</p>
             </div>
@@ -195,7 +195,7 @@ export default function MatterPage() {
                   type="checkbox"
                   checked={includeVersion}
                   onChange={(e) => setIncludeVersion(e.target.checked)}
-                  className="mr-2 text-blue-600"
+                  className="mr-2 text-brand-600"
                 />
                 <span className="text-sm text-gray-700">Include Version Info</span>
               </label>
@@ -205,7 +205,7 @@ export default function MatterPage() {
                   type="checkbox"
                   checked={validateVidPid}
                   onChange={(e) => setValidateVidPid(e.target.checked)}
-                  className="mr-2 text-blue-600"
+                  className="mr-2 text-brand-600"
                 />
                 <span className="text-sm text-gray-700">Validate VID/PID Against CSA Database</span>
               </label>
@@ -215,7 +215,7 @@ export default function MatterPage() {
                   type="checkbox"
                   checked={generateNdef}
                   onChange={(e) => setGenerateNdef(e.target.checked)}
-                  className="mr-2 text-blue-600"
+                  className="mr-2 text-brand-600"
                 />
                 <span className="text-sm text-gray-700">Generate NFC NDEF Payload</span>
               </label>
@@ -256,7 +256,7 @@ export default function MatterPage() {
             <button
               onClick={handleGenerate}
               disabled={loading}
-              className="flex-1 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Generating...' : 'Generate & Download'}
             </button>
@@ -281,8 +281,8 @@ export default function MatterPage() {
         </p>
       </div>
 
-      <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
-        <p className="text-sm text-blue-800">
+      <div className="mt-4 bg-brand-50 border border-brand-200 rounded-lg p-4">
+        <p className="text-sm text-brand-800">
           📐 Recommended: QR size ≥30mm² for reliable scanning<br />
           🎯 Test with Google Home, Apple Home, or Amazon Alexa apps
         </p>

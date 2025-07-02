@@ -26,27 +26,27 @@ export function Layout({ children }: LayoutProps) {
             <div>
               <h4 className="font-medium text-gray-900 mb-3">Features</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="/crypto" className="hover:text-blue-600">Crypto QR Codes</a></li>
-                <li><a href="/matter" className="hover:text-blue-600">Matter/IoT</a></li>
-                <li><a href="/bulk" className="hover:text-blue-600">Bulk Processing</a></li>
-                <li><a href="/3d" className="hover:text-blue-600">3D Printing</a></li>
+                <li><a href="/crypto" className="hover:text-brand-600">Crypto QR Codes</a></li>
+                <li><a href="/matter" className="hover:text-brand-600">Matter/IoT</a></li>
+                <li><a href="/bulk" className="hover:text-brand-600">Bulk Processing</a></li>
+                <li><a href="/3d" className="hover:text-brand-600">3D Printing</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-medium text-gray-900 mb-3">Company</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="/about" className="hover:text-blue-600">About Us</a></li>
-                <li><a href="/contact" className="hover:text-blue-600">Contact</a></li>
-                <li><a href="/privacy" className="hover:text-blue-600">Privacy Policy</a></li>
-                <li><a href="/terms" className="hover:text-blue-600">Terms of Service</a></li>
+                <li><a href="/about" className="hover:text-brand-600">About Us</a></li>
+                <li><a href="/contact" className="hover:text-brand-600">Contact</a></li>
+                <li><a href="/privacy" className="hover:text-brand-600">Privacy Policy</a></li>
+                <li><a href="/terms" className="hover:text-brand-600">Terms of Service</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-medium text-gray-900 mb-3">Resources</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="/docs/USER_GUIDE.md" className="hover:text-blue-600">User Guide</a></li>
-                <li><a href="https://github.com/xuhaoying/privqr.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">GitHub</a></li>
-                <li><a href="/docs/TROUBLESHOOTING.md" className="hover:text-blue-600">Support</a></li>
+                <li><a href="/docs/USER_GUIDE.md" className="hover:text-brand-600">User Guide</a></li>
+                <li><a href="https://github.com/xuhaoying/privqr.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-600">GitHub</a></li>
+                <li><a href="/docs/TROUBLESHOOTING.md" className="hover:text-brand-600">Support</a></li>
               </ul>
             </div>
           </div>

@@ -69,7 +69,7 @@ const BentoCard = ({
         "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
       )}
     >
-      <div className="pointer-events-auto flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700">
+      <div className="pointer-events-auto flex items-center gap-2 text-sm font-medium text-brand-600 hover:text-brand-700">
         {cta}
         <ArrowRightIcon className="h-4 w-4" />
       </div>

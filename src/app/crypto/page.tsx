@@ -141,7 +141,7 @@ export default function CryptoPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-8">
+      <h1 className="text-4xl font-bold bg-gradient-to-r from-brand-600 to-brand-800 bg-clip-text text-transparent mb-8">
         Crypto QR Generator
       </h1>
       
@@ -157,7 +157,7 @@ export default function CryptoPage() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-6 py-3 text-sm font-medium border-b-2 transition-all duration-200 ${
                     activeTab === tab.id
-                      ? 'border-blue-500 text-blue-600 bg-blue-50'
+                      ? 'border-brand-500 text-brand-600 bg-brand-50'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
                   }`}
                 >
@@ -259,7 +259,7 @@ export default function CryptoPage() {
                   <select
                     value={ethChainId}
                     onChange={(e) => setEthChainId(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800"
                   >
                     <option value="1">Mainnet (1)</option>
                     <option value="137">Polygon (137)</option>
@@ -294,12 +294,12 @@ export default function CryptoPage() {
                   onChange={(e) => setLnInvoice(e.target.value)}
                   placeholder="lnbc100n1p3..."
                   rows={4}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 dark:border-gray-600"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800 dark:border-gray-600"
                 />
               </div>
               
-              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md p-4">
-                <p className="text-sm text-blue-800 dark:text-blue-300">
+              <div className="bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-md p-4">
+                <p className="text-sm text-brand-800 dark:text-brand-300">
                   💡 Lightning invoices are time-sensitive. Generate and use them quickly to avoid expiration.
                 </p>
               </div>
@@ -310,7 +310,7 @@ export default function CryptoPage() {
             <ShimmerButton
               onClick={handleGenerate}
               disabled={loading}
-              background="rgba(59, 130, 246, 1)"
+              background="rgba(16, 217, 163, 1)"
               className="px-8 py-3 text-white disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Generating...' : 'Generate QR Code'}
@@ -321,9 +321,9 @@ export default function CryptoPage() {
 
       <QRPreview result={result} loading={loading} label={`${activeTab} payment`} />
 
-      <Card className="mt-8 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-800">
+      <Card className="mt-8 bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-900/20 dark:to-brand-800/20 border-brand-200 dark:border-brand-800">
         <CardContent>
-          <p className="text-sm text-blue-800 dark:text-blue-300 flex items-center gap-2">
+          <p className="text-sm text-brand-800 dark:text-brand-300 flex items-center gap-2">
             <span className="text-lg">💡</span>
             Generated QR codes are {activeTab === 'bitcoin' ? 'BIP-21' : activeTab === 'ethereum' ? 'EIP-681' : 'BOLT-11'} compatible and work with all major wallets
           </p>

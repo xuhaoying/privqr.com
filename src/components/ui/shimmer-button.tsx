@@ -21,7 +21,7 @@ export const ShimmerButton = React.forwardRef<
       shimmerSize = "0.05em",
       shimmerDuration = "3s",
       borderRadius = "8px",
-      background = "rgba(59, 130, 246, 1)", // blue-500
+      background = "rgba(16, 217, 163, 1)", // brand-500
       className,
       children,
       ...props

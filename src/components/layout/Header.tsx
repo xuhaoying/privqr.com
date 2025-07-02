@@ -41,8 +41,8 @@ export function Header() {
                 href={link.href}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                   pathname === link.href
-                    ? 'bg-blue-500 text-white'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? 'bg-brand-500 text-white'
+                    : 'text-gray-700 hover:bg-brand-50'
                 }`}
               >
                 {link.label}

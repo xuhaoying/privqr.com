@@ -98,8 +98,8 @@ export function RelatedContent({ currentPage, maxItems = 4 }: RelatedContentProp
             <Card key={item.href} className="hover:shadow-lg transition-shadow duration-200">
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                    <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <div className="p-2 bg-brand-100 dark:bg-brand-900/30 rounded-lg">
+                    <IconComponent className="w-5 h-5 text-brand-600 dark:text-brand-400" />
                   </div>
                   <span className={`text-xs px-2 py-1 rounded-full font-medium ${
                     item.category === 'tool' 
@@ -119,7 +119,7 @@ export function RelatedContent({ currentPage, maxItems = 4 }: RelatedContentProp
                 </p>
                 <Link href={item.href}>
                   <ShimmerButton
-                    background="rgba(59, 130, 246, 0.8)"
+                    background="rgba(16, 217, 163, 0.8)"
                     className="w-full text-white text-sm"
                   >
                     {item.category === 'tool' ? 'Try Now' : 'Learn More'}
@@ -165,8 +165,8 @@ export function FeatureLinks({
   }
 
   return (
-    <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 my-6">
-      <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-3">
+    <div className="bg-brand-50 dark:bg-brand-900/20 rounded-lg p-4 my-6">
+      <h4 className="font-medium text-brand-900 dark:text-brand-100 mb-3">
         {title}
       </h4>
       <ul className="space-y-2">
@@ -174,7 +174,7 @@ export function FeatureLinks({
           <li key={item.href}>
             <Link 
               href={item.href}
-              className="text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-100 text-sm font-medium hover:underline"
+              className="text-brand-700 dark:text-brand-300 hover:text-brand-900 dark:hover:text-brand-100 text-sm font-medium hover:underline"
             >
               → {item.title}
             </Link>

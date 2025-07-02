@@ -11,7 +11,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-8">
+      <h1 className="text-4xl font-bold bg-gradient-to-r from-brand-600 to-brand-800 bg-clip-text text-transparent mb-8">
         About priv QR
       </h1>
       
@@ -211,7 +211,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/crypto">
               <ShimmerButton 
-                background="rgba(59, 130, 246, 1)"
+                background="rgba(16, 217, 163, 1)"
                 className="text-white"
               >
                 Generate Crypto QR

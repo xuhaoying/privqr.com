@@ -33,7 +33,7 @@ export function QuotaInfo() {
             Daily quota: <strong>{stats.dailyCount}/{stats.dailyLimit}</strong> used
           </span>
         </div>
-        <button className="text-sm text-blue-600 hover:text-blue-800 font-medium">
+        <button className="text-sm text-brand-600 hover:text-brand-800 font-medium">
           Upgrade for unlimited
         </button>
       </div>
