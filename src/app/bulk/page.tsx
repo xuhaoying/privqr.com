@@ -1,12 +1,29 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { QuotaInfo } from '@/components/ui/QuotaInfo';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { AnimatedGradientText } from '@/components/magicui/animated-gradient-text';
+import { BorderBeam } from '@/components/magicui/border-beam';
+import { MagicCard } from '@/components/magicui/magic-card';
+import { TextEffect } from '@/components/magicui/text-effect';
+import NumberTicker from '@/components/magicui/number-ticker';
 import { BatchQRItem } from '@/types/qr';
 import { BatchProcessor, BatchProcessOptions } from '@/lib/batch/processor';
 import { UsageTracker } from '@/lib/utils/usage';
+import { Upload, FileText, Zap, Package, CheckCircle2, AlertCircle, Download, Layers } from 'lucide-react';
 
-export default function BulkPage() {
+const bulkStats = [
+  { label: 'Batch Jobs', value: 1247, icon: Package },
+  { label: 'QR Codes', value: 28439, icon: Layers },
+  { label: 'Avg Speed', value: 47, icon: Zap, suffix: '/min' },
+  { label: 'Success Rate', value: 99.2, icon: CheckCircle2, suffix: '%' },
+];
+
+export default function BulkPageEnhanced() {
   const [file, setFile] = useState<File | null>(null);
   const [processing, setProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -101,192 +118,430 @@ export default function BulkPage() {
   const previewItems = completedItems.slice(0, 3);
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Bulk Generation</h1>
-      
+    <div className="max-w-7xl mx-auto px-4 py-8">
+      {/* Header Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12"
+      >
+        <TextEffect
+          preset="fade-in-blur"
+          as="h1"
+          className="text-5xl lg:text-6xl font-bold mb-6"
+        >
+          Bulk QR
+        </TextEffect>
+        <AnimatedGradientText className="text-5xl lg:text-6xl font-bold mb-6">
+          Generation
+        </AnimatedGradientText>
+        <TextEffect
+          preset="fade-in-blur"
+          as="p"
+          className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
+        >
+          Process hundreds of QR codes simultaneously with our enterprise-grade batch generator. 
+          Upload CSV, customize settings, and download your complete collection.
+        </TextEffect>
+      </motion.div>
+
+      {/* Stats Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+      >
+        {bulkStats.map((stat, index) => (
+          <MagicCard key={stat.label} className="text-center p-6">
+            <div className="flex justify-center mb-3">
+              <stat.icon className="w-8 h-8 text-brand-500" />
+            </div>
+            <div className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">
+              <NumberTicker 
+                value={stat.value} 
+                delay={index * 0.2}
+                decimalPlaces={stat.suffix === '%' ? 1 : 0}
+              />
+              {stat.suffix}
+            </div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">
+              {stat.label}
+            </div>
+          </MagicCard>
+        ))}
+      </motion.div>
+
       <QuotaInfo />
 
-      <div className="bg-white rounded-lg shadow-sm border mb-8">
-        <div className="p-6">
-          {/* Upload Zone */}
-          <div
-            onDrop={handleDrop}
-            onDragOver={(e) => e.preventDefault()}
-            className="border-2 border-dashed border-brand-300 rounded-lg p-8 text-center mb-6 bg-gray-50 hover:bg-brand-50 transition-colors"
-          >
-            <div className="text-5xl mb-4">📄</div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Upload CSV File</h3>
-            <p className="text-gray-700 mb-4">Drop your CSV here or click to browse</p>
-            
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept=".csv"
-              onChange={handleFileSelect}
-              className="hidden"
-            />
-            
-            <button
-              onClick={() => fileInputRef.current?.click()}
-              className="px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600"
-            >
-              Choose File
-            </button>
-            
-            <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-md">
-              <p className="text-xs text-amber-800">
-                Format: type,data,label<br />
-                Max 20 rows in free version
-              </p>
-            </div>
-          </div>
+      <div className="grid lg:grid-cols-2 gap-8">
+        {/* Upload Section */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <MagicCard className="h-fit">
+            <BorderBeam size={250} duration={15} />
+            <CardHeader>
+              <CardTitle className="text-2xl mb-4 flex items-center gap-2">
+                <Upload className="w-6 h-6 text-brand-500" />
+                Batch Upload & Settings
+              </CardTitle>
+            </CardHeader>
 
-          {file && (
-            <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-md">
-              <p className="text-sm text-green-800">
-                ✅ File selected: <strong>{file.name}</strong>
-              </p>
-            </div>
-          )}
-
-          {/* Settings */}
-          <div className="bg-gray-50 rounded-lg p-4 mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Output Settings</h3>
-            
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Format
-                </label>
-                <select
-                  value={format}
-                  onChange={(e) => setFormat(e.target.value as 'png' | 'svg')}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
+            <CardContent>
+              {/* Upload Zone */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                onDrop={handleDrop}
+                onDragOver={(e) => e.preventDefault()}
+                className="relative border-2 border-dashed border-brand-300 dark:border-brand-700 rounded-xl p-8 text-center mb-6 bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-900/20 dark:to-brand-800/20 hover:from-brand-100 hover:to-brand-200 dark:hover:from-brand-800/30 dark:hover:to-brand-700/30 transition-all duration-300 cursor-pointer group"
+                onClick={() => fileInputRef.current?.click()}
+              >
+                <motion.div
+                  animate={{ 
+                    scale: file ? [1, 1.1, 1] : [1, 1.05, 1],
+                    rotate: [0, 2, -2, 0]
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="text-6xl mb-4"
                 >
-                  <option value="png">PNG</option>
-                  <option value="svg">SVG</option>
-                </select>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Size
-                </label>
-                <select
-                  value={size}
-                  onChange={(e) => setSize(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
+                  {file ? '✅' : '📄'}
+                </motion.div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                  {file ? 'File Selected' : 'Upload CSV File'}
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">Drop your CSV here or click to browse</p>
+                
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".csv"
+                  onChange={handleFileSelect}
+                  className="hidden"
+                />
+                
+                <ShimmerButton
+                  background="rgba(16, 217, 163, 1)"
+                  className="text-white px-6 py-2"
                 >
-                  <option value="200">200x200</option>
-                  <option value="400">400x400</option>
-                  <option value="800">800x800</option>
-                </select>
-              </div>
-            </div>
-            
-            <div className="mt-4 flex items-center space-x-4">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={includeLabels}
-                  onChange={(e) => setIncludeLabels(e.target.checked)}
-                  className="mr-2 text-brand-600"
-                />
-                <span className="text-sm text-gray-700">Include labels in filenames</span>
-              </label>
-              
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={errorCorrection}
-                  onChange={(e) => setErrorCorrection(e.target.checked)}
-                  className="mr-2 text-brand-600"
-                />
-                <span className="text-sm text-gray-700">High error correction</span>
-              </label>
-            </div>
-          </div>
+                  <FileText className="w-4 h-4 mr-2" />
+                  Choose File
+                </ShimmerButton>
+                
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="mt-4 p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg"
+                >
+                  <p className="text-xs text-amber-800 dark:text-amber-300">
+                    Format: type,data,label<br />
+                    Max 20 rows in free version
+                  </p>
+                </motion.div>
+              </motion.div>
 
-          {/* Progress */}
-          {processing && (
-            <div className="bg-white border rounded-lg p-4 mb-6">
-              <h4 className="text-sm font-medium text-gray-900 mb-3">
-                Processing... ({currentItem} of {totalItems} items)
-              </h4>
-              
-              {previewItems.length > 0 && (
-                <div className="flex gap-2 mb-4">
-                  {previewItems.map((item) => (
-                    <div
-                      key={item.id}
-                      className="flex-1 border rounded p-3 text-center"
-                    >
-                      <div className="w-16 h-16 bg-gray-200 rounded mx-auto mb-2" />
-                      <p className="text-xs text-gray-700 truncate">
-                        {item.label || item.id}
-                      </p>
-                    </div>
-                  ))}
-                  {totalItems > 3 && (
-                    <div className="flex-1 border rounded p-3 text-center">
-                      <div className="w-16 h-16 bg-gray-100 rounded mx-auto mb-2 flex items-center justify-center">
-                        <span className="text-gray-600">+{totalItems - 3}</span>
+              <AnimatePresence>
+                {file && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.3 }}
+                    className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg"
+                  >
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400" />
+                      <div>
+                        <p className="text-sm font-medium text-green-800 dark:text-green-300">
+                          File Ready for Processing
+                        </p>
+                        <p className="text-xs text-green-600 dark:text-green-400">
+                          {file.name} • {(file.size / 1024).toFixed(1)} KB
+                        </p>
                       </div>
                     </div>
-                  )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Settings */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-lg p-4 mb-6"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <Layers className="w-5 h-5 text-brand-600 dark:text-brand-400" />
+                  <h3 className="text-lg font-semibold text-brand-800 dark:text-brand-300">Output Settings</h3>
                 </div>
-              )}
-              
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <div
-                  className="bg-green-500 h-2 rounded-full transition-all duration-300"
-                  style={{ width: `${progress}%` }}
-                />
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block text-sm font-medium text-brand-700 dark:text-brand-300 mb-2">
+                      Format
+                    </label>
+                    <select
+                      value={format}
+                      onChange={(e) => setFormat(e.target.value as 'png' | 'svg')}
+                      className="w-full px-3 py-2 border border-brand-300 dark:border-brand-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800 text-brand-900 dark:text-brand-100"
+                    >
+                      <option value="png">PNG (Raster)</option>
+                      <option value="svg">SVG (Vector)</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-brand-700 dark:text-brand-300 mb-2">
+                      Size
+                    </label>
+                    <select
+                      value={size}
+                      onChange={(e) => setSize(e.target.value)}
+                      className="w-full px-3 py-2 border border-brand-300 dark:border-brand-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800 text-brand-900 dark:text-brand-100"
+                    >
+                      <option value="200">200x200 (Small)</option>
+                      <option value="400">400x400 (Medium)</option>
+                      <option value="800">800x800 (Large)</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  <motion.label 
+                    className="flex items-center cursor-pointer group"
+                    whileHover={{ x: 2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={includeLabels}
+                      onChange={(e) => setIncludeLabels(e.target.checked)}
+                      className="mr-3 text-brand-600 rounded focus:ring-brand-500"
+                    />
+                    <span className="text-sm text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200 transition-colors">Include labels in filenames</span>
+                  </motion.label>
+                  
+                  <motion.label 
+                    className="flex items-center cursor-pointer group"
+                    whileHover={{ x: 2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={errorCorrection}
+                      onChange={(e) => setErrorCorrection(e.target.checked)}
+                      className="mr-3 text-brand-600 rounded focus:ring-brand-500"
+                    />
+                    <span className="text-sm text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200 transition-colors">High error correction</span>
+                  </motion.label>
+                </div>
+              </motion.div>
+
+              {/* Error display */}
+              <AnimatePresence>
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.3 }}
+                    className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg"
+                  >
+                    <div className="flex items-center gap-3">
+                      <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
+                      <p className="text-sm text-red-800 dark:text-red-300">{error}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Actions */}
+              <div className="space-y-3">
+                <ShimmerButton
+                  onClick={handleProcess}
+                  disabled={!file || processing}
+                  background="rgba(16, 217, 163, 1)"
+                  className="w-full text-white py-3 text-lg"
+                >
+                  {processing ? (
+                    <div className="flex items-center justify-center gap-2">
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Processing Batch...
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center gap-2">
+                      <Zap className="w-5 h-5" />
+                      Start Bulk Generation
+                    </div>
+                  )}
+                </ShimmerButton>
+                
+                <button
+                  onClick={handleDownloadSample}
+                  className="w-full px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 flex items-center justify-center gap-2"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Sample CSV
+                </button>
               </div>
-              
-              <p className="text-xs text-gray-700 mt-2 text-center">
-                {Math.round(progress)}% complete
-              </p>
-            </div>
-          )}
+            </CardContent>
+          </MagicCard>
+        </motion.div>
 
-          {/* Error display */}
-          {error && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-sm text-red-800">❌ {error}</p>
-            </div>
-          )}
+        {/* Progress & Preview Section */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <MagicCard className="h-fit">
+            <CardHeader>
+              <CardTitle className="text-2xl mb-4 flex items-center gap-2">
+                <Package className="w-6 h-6 text-brand-500" />
+                Processing Status
+              </CardTitle>
+            </CardHeader>
 
-          {/* Actions */}
-          <div className="flex space-x-2">
-            <button
-              onClick={handleProcess}
-              disabled={!file || processing}
-              className="flex-1 px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {processing ? 'Processing...' : 'Start Generation'}
-            </button>
-            
-            <button
-              onClick={handleDownloadSample}
-              className="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              Download Sample CSV
-            </button>
-          </div>
-        </div>
+            <CardContent>
+              <AnimatePresence>
+                {processing ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    className="space-y-6"
+                  >
+                    <div className="text-center">
+                      <h4 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
+                        Processing Batch
+                      </h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {currentItem} of {totalItems} items completed
+                      </p>
+                    </div>
+                    
+                    {previewItems.length > 0 && (
+                      <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="grid grid-cols-3 gap-3 mb-6"
+                      >
+                        {previewItems.map((item, index) => (
+                          <motion.div
+                            key={item.id}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: index * 0.1 }}
+                            className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-center bg-white dark:bg-gray-800"
+                          >
+                            <div className="w-16 h-16 bg-gradient-to-br from-brand-100 to-brand-200 dark:from-brand-900 dark:to-brand-800 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                              <CheckCircle2 className="w-8 h-8 text-brand-600 dark:text-brand-400" />
+                            </div>
+                            <p className="text-xs text-gray-700 dark:text-gray-300 truncate">
+                              {item.label || item.id}
+                            </p>
+                          </motion.div>
+                        ))}
+                        {totalItems > 3 && (
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.3 }}
+                            className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-center bg-white dark:bg-gray-800"
+                          >
+                            <div className="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                              <span className="text-sm font-medium text-gray-600 dark:text-gray-400">+{totalItems - 3}</span>
+                            </div>
+                            <p className="text-xs text-gray-600 dark:text-gray-400">More items</p>
+                          </motion.div>
+                        )}
+                      </motion.div>
+                    )}
+                    
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+                        <span>Progress</span>
+                        <span>{Math.round(progress)}%</span>
+                      </div>
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                        <motion.div
+                          className="bg-gradient-to-r from-brand-500 to-brand-600 h-full rounded-full"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${progress}%` }}
+                          transition={{ duration: 0.5, ease: "easeOut" }}
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-center py-16"
+                  >
+                    <motion.div
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        rotate: [0, 5, -5, 0]
+                      }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                      className="text-6xl mb-4"
+                    >
+                      📦
+                    </motion.div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      Ready for Bulk Processing
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      Upload your CSV file and start generating QR codes in batch
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </CardContent>
+          </MagicCard>
+        </motion.div>
       </div>
 
-      <div className="bg-brand-50 border border-brand-200 rounded-lg p-4">
-        <h3 className="text-sm font-semibold text-brand-900 mb-2">CSV Format Guide</h3>
-        <pre className="text-xs text-brand-800 overflow-x-auto">
+      {/* CSV Format Guide */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        className="mt-12"
+      >
+        <MagicCard className="p-6">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 bg-brand-100 dark:bg-brand-900/30 rounded-lg">
+              <FileText className="w-5 h-5 text-brand-600 dark:text-brand-400" />
+            </div>
+            <h3 className="text-lg font-semibold text-brand-900 dark:text-brand-100">CSV Format Guide</h3>
+          </div>
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto">
+            <pre className="text-sm text-gray-800 dark:text-gray-200 font-mono leading-relaxed">
 {`type,data,label
 url,https://example.com,Example Website
-text,Hello World,Sample Text
+text,Hello World,Sample Text  
 wifi,{"ssid":"MyNetwork","password":"pass123"},WiFi Network
 bitcoin,{"address":"bc1q...","amount":0.001},Payment`}
-        </pre>
-      </div>
+            </pre>
+          </div>
+          <div className="mt-4 p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+            <p className="text-xs text-amber-800 dark:text-amber-300 flex items-center gap-2">
+              <AlertCircle className="w-4 h-4" />
+              Supported types: url, text, wifi, bitcoin, ethereum, vcard, email, sms, phone
+            </p>
+          </div>
+        </MagicCard>
+      </motion.div>
     </div>
   );
 }

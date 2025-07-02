@@ -1,15 +1,32 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { QuotaInfo } from '@/components/ui/QuotaInfo';
-import { QRPreview } from '@/components/qr/QRPreview';
+import { QRPreviewEnhanced } from '@/components/qr/QRPreview-enhanced';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { AnimatedGradientText } from '@/components/magicui/animated-gradient-text';
+import { BorderBeam } from '@/components/magicui/border-beam';
+import { MagicCard } from '@/components/magicui/magic-card';
+import { TextEffect } from '@/components/magicui/text-effect';
+import NumberTicker from '@/components/magicui/number-ticker';
 import { MatterDeviceInfo, MatterValidationResult } from '@/types/matter';
 import { QRGenerationResult } from '@/types/qr';
 import { MatterQRGenerator } from '@/lib/matter/generator';
 import { QRGenerator } from '@/lib/qr/generator';
 import { UsageTracker } from '@/lib/utils/usage';
+import { Cpu, Zap, Shield, Radio, Smartphone, CheckCircle2, AlertTriangle, Download } from 'lucide-react';
 
-export default function MatterPage() {
+const matterStats = [
+  { label: 'Devices Paired', value: 2847, icon: Smartphone },
+  { label: 'IoT Networks', value: 156, icon: Radio },
+  { label: 'Success Rate', value: 98.5, icon: CheckCircle2, suffix: '%' },
+  { label: 'Avg Pair Time', value: 12, icon: Zap, suffix: 's' },
+];
+
+export default function MatterPageEnhanced() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<QRGenerationResult | null>(null);
   const [validation, setValidation] = useState<MatterValidationResult | null>(null);
@@ -121,171 +138,371 @@ export default function MatterPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Matter IoT Pairing</h1>
-      
+    <div className="max-w-7xl mx-auto px-4 py-8">
+      {/* Header Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12"
+      >
+        <TextEffect
+          preset="fade-in-blur"
+          as="h1"
+          className="text-5xl lg:text-6xl font-bold mb-6"
+        >
+          Matter IoT
+        </TextEffect>
+        <AnimatedGradientText className="text-5xl lg:text-6xl font-bold mb-6">
+          Pairing QR
+        </AnimatedGradientText>
+        <TextEffect
+          preset="fade-in-blur"
+          as="p"
+          className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
+        >
+          Generate CSA-compliant Matter commissioning QR codes for seamless IoT device pairing. 
+          Full TLV validation and industry-standard compatibility included.
+        </TextEffect>
+      </motion.div>
+
+      {/* Stats Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+      >
+        {matterStats.map((stat, index) => (
+          <MagicCard key={stat.label} className="text-center p-6">
+            <div className="flex justify-center mb-3">
+              <stat.icon className="w-8 h-8 text-brand-500" />
+            </div>
+            <div className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">
+              <NumberTicker 
+                value={stat.value} 
+                delay={index * 0.2}
+                decimalPlaces={stat.suffix === '%' || stat.suffix === 's' ? 1 : 0}
+              />
+              {stat.suffix}
+            </div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">
+              {stat.label}
+            </div>
+          </MagicCard>
+        ))}
+      </motion.div>
+
       <QuotaInfo />
 
-      <div className="bg-white rounded-lg shadow-sm border mb-8">
-        <div className="p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Device Information</h2>
+      <div className="grid lg:grid-cols-2 gap-8">
+
+        {/* Form Section */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <MagicCard className="h-fit">
+            <BorderBeam size={250} duration={15} />
+            <CardHeader>
+              <CardTitle className="text-2xl mb-4">Generate Matter QR Code</CardTitle>
+            </CardHeader>
+
+            <CardContent>
           
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Vendor ID (VID) *
-              </label>
-              <input
-                type="text"
-                value={vendorId}
-                onChange={(e) => setVendorId(e.target.value)}
-                placeholder="0xFFF1"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Product ID (PID) *
-              </label>
-              <input
-                type="text"
-                value={productId}
-                onChange={(e) => setProductId(e.target.value)}
-                placeholder="0x8001"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Setup PIN *
-              </label>
-              <input
-                type="text"
-                value={setupPin}
-                onChange={(e) => setSetupPin(e.target.value)}
-                placeholder="20202021"
-                maxLength={8}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
-              />
-              <p className="text-xs text-gray-600 mt-1">8 digits, avoid sequential or repeated numbers</p>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Discriminator *
-              </label>
-              <input
-                type="text"
-                value={discriminator}
-                onChange={(e) => setDiscriminator(e.target.value)}
-                placeholder="3840"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500"
-              />
-              <p className="text-xs text-gray-600 mt-1">0-4095 (12 bits)</p>
-            </div>
-          </div>
+              <div className="space-y-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                    <Cpu className="w-5 h-5 text-brand-500" />
+                    Device Information
+                  </h3>
+                </motion.div>
 
-          <div className="bg-gray-50 rounded-lg p-4 mb-6">
-            <h3 className="text-sm font-medium text-gray-900 mb-3">TLV Generation Options</h3>
-            <div className="space-y-2">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={includeVersion}
-                  onChange={(e) => setIncludeVersion(e.target.checked)}
-                  className="mr-2 text-brand-600"
-                />
-                <span className="text-sm text-gray-700">Include Version Info</span>
-              </label>
-              
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={validateVidPid}
-                  onChange={(e) => setValidateVidPid(e.target.checked)}
-                  className="mr-2 text-brand-600"
-                />
-                <span className="text-sm text-gray-700">Validate VID/PID Against CSA Database</span>
-              </label>
-              
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={generateNdef}
-                  onChange={(e) => setGenerateNdef(e.target.checked)}
-                  className="mr-2 text-brand-600"
-                />
-                <span className="text-sm text-gray-700">Generate NFC NDEF Payload</span>
-              </label>
-            </div>
-          </div>
-
-          {validation && (
-            <div className={`mb-6 p-4 rounded-lg ${validation.valid ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
-              <h3 className={`text-sm font-medium mb-2 ${validation.valid ? 'text-green-800' : 'text-red-800'}`}>
-                Validation Result: {validation.valid ? '✅ Passed' : '❌ Failed'}
-              </h3>
-              
-              {validation.errors.length > 0 && (
-                <div className="mb-2">
-                  <p className="text-sm font-medium text-red-700">Errors:</p>
-                  <ul className="list-disc list-inside text-sm text-red-600">
-                    {validation.errors.map((error, idx) => (
-                      <li key={idx}>{error}</li>
-                    ))}
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Vendor ID (VID) *
+                    </label>
+                    <Input
+                      type="text"
+                      value={vendorId}
+                      onChange={(e) => setVendorId(e.target.value)}
+                      placeholder="0xFFF1"
+                      className="font-mono"
+                    />
+                  </div>
+            
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Product ID (PID) *
+                    </label>
+                    <Input
+                      type="text"
+                      value={productId}
+                      onChange={(e) => setProductId(e.target.value)}
+                      placeholder="0x8001"
+                      className="font-mono"
+                    />
+                  </div>
+            
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Setup PIN *
+                    </label>
+                    <Input
+                      type="text"
+                      value={setupPin}
+                      onChange={(e) => setSetupPin(e.target.value)}
+                      placeholder="20202021"
+                      maxLength={8}
+                      className="font-mono"
+                    />
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">8 digits, avoid sequential or repeated numbers</p>
+                  </div>
+            
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Discriminator *
+                    </label>
+                    <Input
+                      type="text"
+                      value={discriminator}
+                      onChange={(e) => setDiscriminator(e.target.value)}
+                      placeholder="3840"
+                      className="font-mono"
+                    />
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">0-4095 (12 bits)</p>
+                  </div>
                 </div>
-              )}
-              
-              {validation.warnings.length > 0 && (
-                <div>
-                  <p className="text-sm font-medium text-amber-700">Warnings:</p>
-                  <ul className="list-disc list-inside text-sm text-amber-600">
-                    {validation.warnings.map((warning, idx) => (
-                      <li key={idx}>{warning}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          )}
 
-          <div className="flex space-x-2">
-            <button
-              onClick={handleGenerate}
-              disabled={loading}
-              className="flex-1 px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading ? 'Generating...' : 'Generate & Download'}
-            </button>
-            
-            {validation && (
-              <button
-                onClick={handleDownloadReport}
-                className="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50"
-              >
-                Validation Report
-              </button>
-            )}
-          </div>
-        </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-lg p-4 mt-6"
+                >
+                  <div className="flex items-center gap-2 mb-4">
+                    <Zap className="w-5 h-5 text-brand-600 dark:text-brand-400" />
+                    <h3 className="text-sm font-medium text-brand-800 dark:text-brand-300">TLV Generation Options</h3>
+                  </div>
+                  <div className="space-y-3">
+                    <motion.label 
+                      className="flex items-center cursor-pointer group"
+                      whileHover={{ x: 2 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={includeVersion}
+                        onChange={(e) => setIncludeVersion(e.target.checked)}
+                        className="mr-3 text-brand-600 rounded focus:ring-brand-500"
+                      />
+                      <span className="text-sm text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200 transition-colors">Include Version Info</span>
+                    </motion.label>
+                    
+                    <motion.label 
+                      className="flex items-center cursor-pointer group"
+                      whileHover={{ x: 2 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={validateVidPid}
+                        onChange={(e) => setValidateVidPid(e.target.checked)}
+                        className="mr-3 text-brand-600 rounded focus:ring-brand-500"
+                      />
+                      <span className="text-sm text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200 transition-colors">Validate VID/PID Against CSA Database</span>
+                    </motion.label>
+                    
+                    <motion.label 
+                      className="flex items-center cursor-pointer group"
+                      whileHover={{ x: 2 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={generateNdef}
+                        onChange={(e) => setGenerateNdef(e.target.checked)}
+                        className="mr-3 text-brand-600 rounded focus:ring-brand-500"
+                      />
+                      <span className="text-sm text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200 transition-colors">Generate NFC NDEF Payload</span>
+                    </motion.label>
+                  </div>
+                </motion.div>
+
+                <AnimatePresence>
+                  {validation && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                      transition={{ duration: 0.3 }}
+                      className={`mt-6 p-4 rounded-lg border ${validation.valid 
+                        ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800' 
+                        : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2 mb-3">
+                        {validation.valid ? (
+                          <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400" />
+                        ) : (
+                          <AlertTriangle className="w-5 h-5 text-red-600 dark:text-red-400" />
+                        )}
+                        <h3 className={`text-sm font-medium ${validation.valid 
+                          ? 'text-green-800 dark:text-green-300' 
+                          : 'text-red-800 dark:text-red-300'
+                        }`}>
+                          Validation {validation.valid ? 'Passed' : 'Failed'}
+                        </h3>
+                      </div>
+                      
+                      {validation.errors.length > 0 && (
+                        <div className="mb-3">
+                          <p className="text-sm font-medium text-red-700 dark:text-red-300 mb-1">Errors:</p>
+                          <ul className="space-y-1">
+                            {validation.errors.map((error, idx) => (
+                              <motion.li 
+                                key={idx}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: idx * 0.1 }}
+                                className="text-sm text-red-600 dark:text-red-400 flex items-start gap-1"
+                              >
+                                <span className="text-red-500">•</span>
+                                <span>{error}</span>
+                              </motion.li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      
+                      {validation.warnings.length > 0 && (
+                        <div>
+                          <p className="text-sm font-medium text-amber-700 dark:text-amber-300 mb-1">Warnings:</p>
+                          <ul className="space-y-1">
+                            {validation.warnings.map((warning, idx) => (
+                              <motion.li 
+                                key={idx}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: idx * 0.1 }}
+                                className="text-sm text-amber-600 dark:text-amber-400 flex items-start gap-1"
+                              >
+                                <span className="text-amber-500">•</span>
+                                <span>{warning}</span>
+                              </motion.li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <div className="mt-8 space-y-3">
+                  <ShimmerButton
+                    onClick={handleGenerate}
+                    disabled={loading}
+                    background="rgba(16, 217, 163, 1)"
+                    className="w-full text-white py-3 text-lg"
+                  >
+                    {loading ? (
+                      <div className="flex items-center justify-center gap-2">
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        Generating Matter QR...
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-center gap-2">
+                        <Shield className="w-5 h-5" />
+                        Generate Secure Matter QR
+                      </div>
+                    )}
+                  </ShimmerButton>
+                  
+                  <AnimatePresence>
+                    {validation && (
+                      <motion.button
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        onClick={handleDownloadReport}
+                        className="w-full px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 flex items-center justify-center gap-2"
+                      >
+                        <Download className="w-4 h-4" />
+                        Download Validation Report
+                      </motion.button>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+            </CardContent>
+          </MagicCard>
+        </motion.div>
+
+        {/* Preview Section */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <QRPreviewEnhanced 
+            result={result} 
+            loading={loading} 
+            label="Matter pairing code" 
+          />
+        </motion.div>
       </div>
 
-      <QRPreview result={result} loading={loading} label="Matter Pairing Code" />
+      {/* Info Cards */}
+      <div className="grid md:grid-cols-2 gap-6 mt-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          <MagicCard className="p-6">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-amber-100 dark:bg-amber-900/30 rounded-full">
+                <Zap className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                  Professional Features
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  TLV validation included • CSA compliant • Industry standard commissioning
+                </p>
+              </div>
+            </div>
+          </MagicCard>
+        </motion.div>
 
-      <div className="mt-8 bg-amber-50 border border-amber-200 rounded-lg p-4">
-        <p className="text-sm text-amber-800">
-          ⚡ Professional features • TLV validation included • CSA compliant
-        </p>
-      </div>
-
-      <div className="mt-4 bg-brand-50 border border-brand-200 rounded-lg p-4">
-        <p className="text-sm text-brand-800">
-          📐 Recommended: QR size ≥30mm² for reliable scanning<br />
-          🎯 Test with Google Home, Apple Home, or Amazon Alexa apps
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <MagicCard className="p-6">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-brand-100 dark:bg-brand-900/30 rounded-full">
+                <Smartphone className="w-6 h-6 text-brand-600 dark:text-brand-400" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                  Universal Compatibility
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  QR size ≥30mm² recommended • Test with Google Home, Apple Home, or Amazon Alexa
+                </p>
+              </div>
+            </div>
+          </MagicCard>
+        </motion.div>
       </div>
     </div>
   );
