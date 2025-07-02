@@ -57,6 +57,16 @@ const trustBadges = [
   { icon: '📱', text: 'Works Offline' },
 ];
 
+export const metadata = {
+  title: 'QR Toolkit - Professional QR Code Generator | Free, Privacy-First',
+  description: 'Generate professional QR codes instantly with our privacy-first tool. Support for crypto payments (Bitcoin, Ethereum), IoT devices, bulk processing, and 3D printing. 100% free and works offline.',
+  keywords: 'free QR code generator, professional QR codes, crypto QR codes, Bitcoin QR, Ethereum QR, bulk QR generator, IoT QR codes, Matter device codes, privacy QR generator',
+  openGraph: {
+    title: 'QR Toolkit - Professional QR Code Generator',
+    description: 'Create professional QR codes for crypto, IoT, and business use. Privacy-first, works offline, completely free.',
+  },
+};
+
 export default function Home() {
   return (
     <div className="min-h-[calc(100vh-4rem)] max-w-7xl mx-auto px-4 py-8">

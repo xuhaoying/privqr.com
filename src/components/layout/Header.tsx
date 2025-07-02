@@ -11,6 +11,9 @@ export function Header() {
     { href: '/crypto', label: 'Crypto' },
     { href: '/matter', label: 'Matter' },
     { href: '/bulk', label: 'Bulk' },
+    { href: '/3d', label: '3D Print' },
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
