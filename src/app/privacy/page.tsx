@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { FeatureLinks } from '@/components/seo/RelatedContent';
 
 export const metadata = {
   title: 'Privacy Policy | priv QR',
@@ -74,6 +75,11 @@ export default function PrivacyPage() {
               <li>Remember your preferred settings</li>
               <li>Enable offline functionality</li>
             </ul>
+            
+            <FeatureLinks 
+              features={['crypto', 'matter', 'bulk']} 
+              title="Privacy-Protected QR Generators" 
+            />
           </CardContent>
         </Card>
 

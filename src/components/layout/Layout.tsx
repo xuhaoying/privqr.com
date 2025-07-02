@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Header } from './Header';
+import { BreadcrumbsClient } from '@/components/seo/BreadcrumbsClient';
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,6 +11,7 @@ export function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-gray-50">
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <BreadcrumbsClient />
         {children}
       </main>
       <footer className="mt-auto py-6 bg-gray-100 border-t">

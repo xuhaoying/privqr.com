@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { RelatedContent } from '@/components/seo/RelatedContent';
 
 export const metadata = {
   title: 'Contact Us | priv QR',
@@ -16,7 +17,7 @@ export default function ContactPage() {
         <div className="space-y-8">
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle>Get in Touch</CardTitle>
+              <h2 className="text-xl font-semibold">Get in Touch</h2>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 mb-6">
@@ -83,28 +84,28 @@ export default function ContactPage() {
         <div className="space-y-8">
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-semibold">
                 📧 Email Support
-              </CardTitle>
+              </h3>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 mb-4">
                 For general inquiries and support:
               </p>
-              <p className="font-medium">support@qrtoolkit.com</p>
+              <p className="font-medium">support@privqr.com</p>
               
               <p className="text-gray-600 mb-2 mt-4">
                 For privacy-related questions:
               </p>
-              <p className="font-medium">privacy@qrtoolkit.com</p>
+              <p className="font-medium">privacy@privqr.com</p>
             </CardContent>
           </Card>
           
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-semibold">
                 💻 GitHub
-              </CardTitle>
+              </h3>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 mb-4">
@@ -123,9 +124,9 @@ export default function ContactPage() {
           
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-semibold">
                 📚 Documentation
-              </CardTitle>
+              </h3>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 mb-4">
@@ -158,9 +159,9 @@ export default function ContactPage() {
           
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-semibold">
                 🕒 Response Times
-              </CardTitle>
+              </h3>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm">
@@ -182,9 +183,9 @@ export default function ContactPage() {
           
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-semibold">
                 🌍 Community
-              </CardTitle>
+              </h3>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 mb-4">
@@ -207,9 +208,9 @@ export default function ContactPage() {
           
           <Card className="bg-blue-50 border-blue-200">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-blue-800">
+              <h3 className="flex items-center gap-2 text-lg font-semibold text-blue-800">
                 💡 Quick Help
-              </CardTitle>
+              </h3>
             </CardHeader>
             <CardContent>
               <p className="text-blue-700 text-sm">
@@ -226,6 +227,8 @@ export default function ContactPage() {
           </Card>
         </div>
       </div>
+      
+      <RelatedContent currentPage="/contact" />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Layout } from "@/components/layout/Layout";
+import { OrganizationSchema, WebAppSchema } from "@/components/seo/StructuredData";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   robots: "index, follow",
   applicationName: "priv QR",
   referrer: "origin-when-cross-origin",
-  metadataBase: new URL('https://qrtoolkit.vercel.app'),
+  metadataBase: new URL('https://privqr.com'),
   alternates: {
     canonical: '/',
   },
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     description: "Generate professional QR codes offline with zero dependencies. Privacy-first QR generation for crypto, IoT, and bulk processing.",
     type: "website",
     locale: "en_US",
-    url: "https://qrtoolkit.vercel.app",
+    url: "https://privqr.com",
     siteName: "priv QR",
     images: [
       {
@@ -57,6 +58,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <OrganizationSchema />
+        <WebAppSchema />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <Layout>{children}</Layout>
       </body>

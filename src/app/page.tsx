@@ -3,6 +3,7 @@ import { BentoGrid, BentoCard } from '@/components/ui/bento-grid';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Bitcoin, Wifi, Upload, Printer } from 'lucide-react';
+import { FAQSchema } from '@/components/seo/StructuredData';
 
 const features = [
   {
@@ -111,9 +112,9 @@ export default function Home() {
       <section className="mb-16">
         <Card className="bg-gradient-to-r from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 border-0 shadow-lg">
           <CardHeader>
-            <CardTitle className="text-3xl font-bold text-center mb-8">
+            <h2 className="text-3xl font-bold text-center mb-8">
               Why priv QR?
-            </CardTitle>
+            </h2>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-3 gap-8">
@@ -182,6 +183,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      <FAQSchema />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { RelatedContent } from '@/components/seo/RelatedContent';
 import Link from 'next/link';
 
 export const metadata = {
@@ -17,7 +18,7 @@ export default function AboutPage() {
       <div className="space-y-8">
         <Card className="shadow-lg">
           <CardHeader>
-            <CardTitle>Our Mission</CardTitle>
+            <h2 className="text-xl font-semibold">Our Mission</h2>
           </CardHeader>
           <CardContent className="prose max-w-none">
             <p className="text-lg text-gray-600 mb-6">
@@ -33,9 +34,9 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-8">
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-semibold">
                 🔒 Privacy First
-              </CardTitle>
+              </h3>
             </CardHeader>
             <CardContent>
               <p>
@@ -46,9 +47,9 @@ export default function AboutPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-semibold">
                 ⚡ Lightning Fast
-              </CardTitle>
+              </h3>
             </CardHeader>
             <CardContent>
               <p>
@@ -59,9 +60,9 @@ export default function AboutPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-semibold">
                 📱 Works Offline
-              </CardTitle>
+              </h3>
             </CardHeader>
             <CardContent>
               <p>
@@ -72,9 +73,9 @@ export default function AboutPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-semibold">
                 🏗️ Professional Grade
-              </CardTitle>
+              </h3>
             </CardHeader>
             <CardContent>
               <p>
@@ -86,7 +87,7 @@ export default function AboutPage() {
 
         <Card className="shadow-lg">
           <CardHeader>
-            <CardTitle>What Makes Us Different</CardTitle>
+            <h2 className="text-xl font-semibold">What Makes Us Different</h2>
           </CardHeader>
           <CardContent className="prose max-w-none">
             <h3>Specialized for Modern Use Cases</h3>
@@ -115,7 +116,7 @@ export default function AboutPage() {
 
         <Card className="shadow-lg">
           <CardHeader>
-            <CardTitle>Our Technology</CardTitle>
+            <h2 className="text-xl font-semibold">Our Technology</h2>
           </CardHeader>
           <CardContent className="prose max-w-none">
             <h3>Technical Excellence</h3>
@@ -156,7 +157,7 @@ export default function AboutPage() {
 
         <Card className="shadow-lg">
           <CardHeader>
-            <CardTitle>Community & Support</CardTitle>
+            <h2 className="text-xl font-semibold">Community & Support</h2>
           </CardHeader>
           <CardContent className="prose max-w-none">
             <h3>Open Source</h3>
@@ -181,7 +182,7 @@ export default function AboutPage() {
 
         <Card className="shadow-lg">
           <CardHeader>
-            <CardTitle>Future Roadmap</CardTitle>
+            <h2 className="text-xl font-semibold">Future Roadmap</h2>
           </CardHeader>
           <CardContent className="prose max-w-none">
             <p>We&apos;re continuously improving priv QR with new features and capabilities:</p>
@@ -226,6 +227,8 @@ export default function AboutPage() {
             </Link>
           </div>
         </div>
+        
+        <RelatedContent currentPage="/about" />
       </div>
     </div>
   );

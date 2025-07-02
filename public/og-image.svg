@@ -1,0 +1,86 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Logo placeholder -->
+  <g transform="translate(100, 200)">
+    <!-- Shield shape similar to logo -->
+    <path d="M0 0 h100 c10 0 20 10 20 20 v60 c0 40 -20 80 -70 100 c-50 -20 -70 -60 -70 -100 v-60 c0 -10 10 -20 20 -20 z" 
+          fill="#10d9a3" stroke="none"/>
+    
+    <!-- QR-like pattern inside shield -->
+    <rect x="20" y="30" width="60" height="60" fill="#1e293b" rx="4"/>
+    <rect x="25" y="35" width="10" height="10" fill="#10d9a3"/>
+    <rect x="40" y="35" width="10" height="10" fill="#10d9a3"/>
+    <rect x="55" y="35" width="10" height="10" fill="#10d9a3"/>
+    <rect x="70" y="35" width="5" height="10" fill="#10d9a3"/>
+    
+    <rect x="25" y="50" width="10" height="10" fill="#10d9a3"/>
+    <rect x="55" y="50" width="10" height="10" fill="#10d9a3"/>
+    
+    <rect x="25" y="65" width="10" height="10" fill="#10d9a3"/>
+    <rect x="40" y="65" width="10" height="10" fill="#10d9a3"/>
+    <rect x="55" y="65" width="10" height="10" fill="#10d9a3"/>
+    <rect x="70" y="65" width="5" height="10" fill="#10d9a3"/>
+    
+    <!-- Lock symbol -->
+    <circle cx="50" cy="55" r="8" fill="#1e293b"/>
+    <rect x="47" y="58" width="6" height="8" fill="#10d9a3" rx="1"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="250" y="280" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white">
+    priv QR
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="250" y="330" font-family="Arial, sans-serif" font-size="32" fill="#e2e8f0">
+    Professional QR Code Generator
+  </text>
+  
+  <!-- Features -->
+  <text x="250" y="380" font-family="Arial, sans-serif" font-size="24" fill="#cbd5e1">
+    🔒 Privacy-First • ⚡ Offline-Capable • 📱 Professional-Grade
+  </text>
+  
+  <!-- CTA -->
+  <text x="250" y="430" font-family="Arial, sans-serif" font-size="20" fill="#10d9a3">
+    Generate Crypto, IoT, and Bulk QR Codes
+  </text>
+  
+  <!-- Website -->
+  <text x="250" y="480" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+    privqr.com
+  </text>
+  
+  <!-- Decorative QR pattern on the right -->
+  <g transform="translate(900, 150)">
+    <rect x="0" y="0" width="200" height="200" fill="rgba(255,255,255,0.1)" rx="8"/>
+    <g fill="rgba(255,255,255,0.2)">
+      <rect x="20" y="20" width="20" height="20" rx="2"/>
+      <rect x="60" y="20" width="20" height="20" rx="2"/>
+      <rect x="100" y="20" width="20" height="20" rx="2"/>
+      <rect x="140" y="20" width="20" height="20" rx="2"/>
+      
+      <rect x="20" y="60" width="20" height="20" rx="2"/>
+      <rect x="100" y="60" width="20" height="20" rx="2"/>
+      <rect x="140" y="60" width="20" height="20" rx="2"/>
+      
+      <rect x="20" y="100" width="20" height="20" rx="2"/>
+      <rect x="60" y="100" width="20" height="20" rx="2"/>
+      <rect x="100" y="100" width="20" height="20" rx="2"/>
+      <rect x="140" y="100" width="20" height="20" rx="2"/>
+      
+      <rect x="20" y="140" width="20" height="20" rx="2"/>
+      <rect x="60" y="140" width="20" height="20" rx="2"/>
+      <rect x="140" y="140" width="20" height="20" rx="2"/>
+    </g>
+  </g>
+</svg>
