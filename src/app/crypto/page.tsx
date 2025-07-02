@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { QuotaInfo } from '@/components/ui/QuotaInfo';
 import { QRPreview } from '@/components/qr/QRPreview';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { CryptoType, BitcoinPaymentRequest, EthereumPaymentRequest, LightningInvoice } from '@/types/crypto';
 import { QRGenerationResult } from '@/types/qr';
 import { CryptoQRGenerator } from '@/lib/crypto/generator';
@@ -137,128 +140,126 @@ export default function CryptoPage() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Crypto QR Generator</h1>
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-8">
+        Crypto QR Generator
+      </h1>
       
       <QuotaInfo />
 
-      <div className="bg-white rounded-lg shadow-sm border mb-8">
-        <div className="border-b">
-          <nav className="flex">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-3 text-sm font-medium border-b-2 transition-colors ${
-                  activeTab === tab.id
-                    ? 'border-blue-500 text-blue-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </nav>
-        </div>
+      <Card className="mb-8 shadow-lg">
+        <CardHeader>
+          <div className="border-b">
+            <nav className="flex">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-6 py-3 text-sm font-medium border-b-2 transition-all duration-200 ${
+                    activeTab === tab.id
+                      ? 'border-blue-500 text-blue-600 bg-blue-50'
+                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </CardHeader>
 
-        <div className="p-6">
+        <CardContent>
           {activeTab === 'bitcoin' && (
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Bitcoin Address *
                 </label>
-                <input
+                <Input
                   type="text"
                   value={btcAddress}
                   onChange={(e) => setBtcAddress(e.target.value)}
                   placeholder="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Amount (BTC)
                   </label>
-                  <input
+                  <Input
                     type="number"
                     value={btcAmount}
                     onChange={(e) => setBtcAmount(e.target.value)}
                     placeholder="0.001"
                     step="0.00000001"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Label
                   </label>
-                  <input
+                  <Input
                     type="text"
                     value={btcLabel}
                     onChange={(e) => setBtcLabel(e.target.value)}
                     placeholder="Payment for services"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Message
                 </label>
-                <input
+                <Input
                   type="text"
                   value={btcMessage}
                   onChange={(e) => setBtcMessage(e.target.value)}
                   placeholder="Optional message"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
             </div>
           )}
 
           {activeTab === 'ethereum' && (
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Ethereum Address *
                 </label>
-                <input
+                <Input
                   type="text"
                   value={ethAddress}
                   onChange={(e) => setEthAddress(e.target.value)}
                   placeholder="0x742d35Cc6634C0532925a3b844Bc9e7595f1b794"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Amount (ETH)
                   </label>
-                  <input
+                  <Input
                     type="number"
                     value={ethAmount}
                     onChange={(e) => setEthAmount(e.target.value)}
                     placeholder="0.01"
                     step="0.000000000000000001"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Chain ID
                   </label>
                   <select
                     value={ethChainId}
                     onChange={(e) => setEthChainId(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800"
                   >
                     <option value="1">Mainnet (1)</option>
                     <option value="137">Polygon (137)</option>
@@ -269,24 +270,23 @@ export default function CryptoPage() {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Gas Limit
                 </label>
-                <input
+                <Input
                   type="text"
                   value={ethGasLimit}
                   onChange={(e) => setEthGasLimit(e.target.value)}
                   placeholder="21000"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
             </div>
           )}
 
           {activeTab === 'lightning' && (
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Lightning Invoice *
                 </label>
                 <textarea
@@ -294,37 +294,41 @@ export default function CryptoPage() {
                   onChange={(e) => setLnInvoice(e.target.value)}
                   placeholder="lnbc100n1p3..."
                   rows={4}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 dark:border-gray-600"
                 />
               </div>
               
-              <div className="bg-blue-50 border border-blue-200 rounded-md p-4">
-                <p className="text-sm text-blue-800">
+              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md p-4">
+                <p className="text-sm text-blue-800 dark:text-blue-300">
                   💡 Lightning invoices are time-sensitive. Generate and use them quickly to avoid expiration.
                 </p>
               </div>
             </div>
           )}
 
-          <div className="mt-6">
-            <button
+          <div className="mt-8 flex justify-center">
+            <ShimmerButton
               onClick={handleGenerate}
               disabled={loading}
-              className="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+              background="rgba(59, 130, 246, 1)"
+              className="px-8 py-3 text-white disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Generating...' : 'Generate QR Code'}
-            </button>
+            </ShimmerButton>
           </div>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
       <QRPreview result={result} loading={loading} label={`${activeTab} payment`} />
 
-      <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-4">
-        <p className="text-sm text-blue-800">
-          💡 Generated QR codes are {activeTab === 'bitcoin' ? 'BIP-21' : activeTab === 'ethereum' ? 'EIP-681' : 'BOLT-11'} compatible and work with all major wallets
-        </p>
-      </div>
+      <Card className="mt-8 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-800">
+        <CardContent>
+          <p className="text-sm text-blue-800 dark:text-blue-300 flex items-center gap-2">
+            <span className="text-lg">💡</span>
+            Generated QR codes are {activeTab === 'bitcoin' ? 'BIP-21' : activeTab === 'ethereum' ? 'EIP-681' : 'BOLT-11'} compatible and work with all major wallets
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }
