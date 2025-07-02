@@ -13,7 +13,7 @@ export function StructuredData({ type = 'organization', data }: StructuredDataPr
         "@type": "Organization",
         "name": "priv QR",
         "url": "https://privqr.com",
-        "logo": "https://privqr.com/logo.png",
+        "logo": "https://privqr.com/logo-transparent.svg",
         "description": "Privacy-first professional QR code generator for developers, crypto enthusiasts, and IoT engineers. Generate secure QR codes entirely in your browser.",
         "foundingDate": "2024",
         "contactPoint": {
