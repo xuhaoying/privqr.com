@@ -80,7 +80,7 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-lg font-semibold mb-6 text-gray-900 dark:text-gray-100">
+          <h3 className="text-lg font-semibold mb-6 text-black dark:text-white">
             QR Code Preview
           </h3>
         </motion.div>
@@ -97,7 +97,7 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
               >
                 <div className="text-center">
                   <LoadingDots size="lg" />
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
+                  <p className="text-sm text-black dark:text-white mt-4">
                     Generating QR Code...
                   </p>
                 </div>
@@ -133,7 +133,7 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="text-sm text-gray-700 dark:text-gray-300 mb-6"
+                  className="text-sm text-black dark:text-white mb-6"
                 >
                   {label || 'QR Code'} • Generated offline
                 </motion.p>
@@ -181,7 +181,7 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
                       ⬜
                     </motion.span>
                   </div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <p className="text-sm text-black dark:text-white">
                     QR Preview
                   </p>
                 </div>

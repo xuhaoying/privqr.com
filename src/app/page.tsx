@@ -132,7 +132,7 @@ export default function HomePage() {
             <TextEffect
               preset="fade-in-blur"
               as="p"
-              className="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl lg:text-2xl text-black dark:text-white max-w-3xl mx-auto leading-relaxed"
             >
               Create crypto-ready, IoT-compatible, and business-grade QR codes with zero dependencies. 
               Everything happens in your browser - no servers, no data collection, no privacy concerns.
@@ -181,7 +181,7 @@ export default function HomePage() {
                 >
                   <div className="text-4xl mb-2">{stat.icon}</div>
                   <div className="text-3xl font-bold text-brand-600 dark:text-brand-400">{stat.number}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">{stat.text}</div>
+                  <div className="text-sm text-black dark:text-white">{stat.text}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -203,7 +203,7 @@ export default function HomePage() {
                 Powerful Tools
               </AnimatedGradientText>
             </h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-black dark:text-white max-w-2xl mx-auto">
               Professional-grade QR code generation for every use case
             </p>
           </motion.div>
@@ -251,7 +251,7 @@ export default function HomePage() {
                   Privacy Protection
                 </AnimatedGradientText>
               </h2>
-              <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
+              <p className="text-xl text-black dark:text-gray-300 mb-8">
                 Watch as QR codes are generated entirely in your browser. No data ever leaves your device, 
                 ensuring complete privacy and security for your sensitive information.
               </p>
@@ -260,21 +260,21 @@ export default function HomePage() {
                   <CardContent className="pt-6">
                     <Shield className="w-8 h-8 text-brand-500 mx-auto mb-2" />
                     <h3 className="font-semibold">Zero Servers</h3>
-                    <p className="text-sm text-gray-600">100% client-side</p>
+                    <p className="text-sm text-black">100% client-side</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center">
                   <CardContent className="pt-6">
                     <Zap className="w-8 h-8 text-brand-500 mx-auto mb-2" />
                     <h3 className="font-semibold">Lightning Fast</h3>
-                    <p className="text-sm text-gray-600">Sub-50ms generation</p>
+                    <p className="text-sm text-black">Sub-50ms generation</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center">
                   <CardContent className="pt-6">
                     <Globe className="w-8 h-8 text-brand-500 mx-auto mb-2" />
                     <h3 className="font-semibold">Works Offline</h3>
-                    <p className="text-sm text-gray-600">No internet needed</p>
+                    <p className="text-sm text-black">No internet needed</p>
                   </CardContent>
                 </Card>
               </div>
@@ -296,7 +296,7 @@ export default function HomePage() {
                         <span className="text-xl">{activity.icon}</span>
                         <div className="flex-1">
                           <p className="text-sm font-medium">{activity.text}</p>
-                          <p className="text-xs text-gray-500">{activity.time}</p>
+                          <p className="text-xs text-black">{activity.time}</p>
                         </div>
                       </div>
                     ))}
@@ -324,7 +324,7 @@ export default function HomePage() {
                 QR codes?
               </AnimatedGradientText>
             </h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-black dark:text-gray-300 mb-8 max-w-2xl mx-auto">
               Join thousands of users who trust priv QR for their professional QR code needs. 
               Start generating now, completely free.
             </p>

@@ -135,7 +135,7 @@ export default function BulkPageEnhanced() {
         <TextEffect
           preset="fade-in-blur"
           as="p"
-          className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
+          className="text-xl text-black dark:text-white max-w-3xl mx-auto mb-8"
         >
           Process hundreds of QR codes simultaneously with our enterprise-grade batch generator. 
           Upload CSV, customize settings, and download your complete collection.
@@ -154,7 +154,7 @@ export default function BulkPageEnhanced() {
             <div className="flex justify-center mb-3">
               <stat.icon className="w-8 h-8 text-brand-500" />
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">
+            <div className="text-2xl font-bold text-black dark:text-white mb-1">
               <NumberTicker 
                 value={stat.value} 
                 delay={index * 0.2}
@@ -162,7 +162,7 @@ export default function BulkPageEnhanced() {
               />
               {stat.suffix}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-sm text-black dark:text-white">
               {stat.label}
             </div>
           </MagicCard>
@@ -208,10 +208,10 @@ export default function BulkPageEnhanced() {
                 >
                   {file ? '✅' : '📄'}
                 </motion.div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                <h3 className="text-lg font-semibold text-black dark:text-white mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
                   {file ? 'File Selected' : 'Upload CSV File'}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">Drop your CSV here or click to browse</p>
+                <p className="text-black dark:text-white mb-4">Drop your CSV here or click to browse</p>
                 
                 <input
                   ref={fileInputRef}
@@ -381,7 +381,7 @@ export default function BulkPageEnhanced() {
                 
                 <button
                   onClick={handleDownloadSample}
-                  className="w-full px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 flex items-center justify-center gap-2"
+                  className="w-full px-4 py-2 bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   <Download className="w-4 h-4" />
                   Download Sample CSV
@@ -415,10 +415,10 @@ export default function BulkPageEnhanced() {
                     className="space-y-6"
                   >
                     <div className="text-center">
-                      <h4 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
+                      <h4 className="text-lg font-medium text-black dark:text-white mb-2">
                         Processing Batch
                       </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                      <p className="text-sm text-black dark:text-white">
                         {currentItem} of {totalItems} items completed
                       </p>
                     </div>
@@ -441,7 +441,7 @@ export default function BulkPageEnhanced() {
                             <div className="w-16 h-16 bg-gradient-to-br from-brand-100 to-brand-200 dark:from-brand-900 dark:to-brand-800 rounded-lg mx-auto mb-2 flex items-center justify-center">
                               <CheckCircle2 className="w-8 h-8 text-brand-600 dark:text-brand-400" />
                             </div>
-                            <p className="text-xs text-gray-700 dark:text-gray-300 truncate">
+                            <p className="text-xs text-black dark:text-white truncate">
                               {item.label || item.id}
                             </p>
                           </motion.div>
@@ -454,16 +454,16 @@ export default function BulkPageEnhanced() {
                             className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-center bg-white dark:bg-gray-800"
                           >
                             <div className="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                              <span className="text-sm font-medium text-gray-600 dark:text-gray-400">+{totalItems - 3}</span>
+                              <span className="text-sm font-medium text-black dark:text-white">+{totalItems - 3}</span>
                             </div>
-                            <p className="text-xs text-gray-600 dark:text-gray-400">More items</p>
+                            <p className="text-xs text-black dark:text-white">More items</p>
                           </motion.div>
                         )}
                       </motion.div>
                     )}
                     
                     <div className="space-y-2">
-                      <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+                      <div className="flex justify-between text-sm text-black dark:text-white">
                         <span>Progress</span>
                         <span>{Math.round(progress)}%</span>
                       </div>
@@ -493,10 +493,10 @@ export default function BulkPageEnhanced() {
                     >
                       📦
                     </motion.div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                    <h3 className="text-lg font-semibold text-black dark:text-white mb-2">
                       Ready for Bulk Processing
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400">
+                    <p className="text-black dark:text-white">
                       Upload your CSV file and start generating QR codes in batch
                     </p>
                   </motion.div>
@@ -522,7 +522,7 @@ export default function BulkPageEnhanced() {
             <h3 className="text-lg font-semibold text-brand-900 dark:text-brand-100">CSV Format Guide</h3>
           </div>
           <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-gray-800 dark:text-gray-200 font-mono leading-relaxed">
+            <pre className="text-sm text-black dark:text-white font-mono leading-relaxed">
 {`type,data,label
 url,https://example.com,Example Website
 text,Hello World,Sample Text  

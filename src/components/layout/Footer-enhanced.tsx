@@ -77,7 +77,7 @@ export function FooterEnhanced() {
                 ✨
               </motion.div>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+            <p className="text-black dark:text-white mb-6 leading-relaxed">
               Privacy-first QR code generator for professionals. Generate Bitcoin, Ethereum, Lightning, 
               IoT device codes, and more - all in your browser with zero data collection.
             </p>
@@ -91,7 +91,7 @@ export function FooterEnhanced() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"
+                  className="flex items-center gap-3 text-sm text-black dark:text-white"
                 >
                   <feature.icon className="w-4 h-4 text-brand-500" />
                   <span>{feature.text}</span>
@@ -107,7 +107,7 @@ export function FooterEnhanced() {
               viewport={{ once: true }}
               className="mt-8"
             >
-              <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">
+              <h4 className="font-semibold text-black dark:text-white mb-3">
                 Stay Updated
               </h4>
               <div className="flex gap-2">
@@ -133,7 +133,7 @@ export function FooterEnhanced() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Features</h4>
+            <h4 className="font-semibold text-black dark:text-white mb-4">Features</h4>
             <ul className="space-y-3">
               {footerLinks.features.map((link, index) => (
                 <motion.li
@@ -145,7 +145,7 @@ export function FooterEnhanced() {
                 >
                   <Link
                     href={link.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm flex items-center gap-2 group"
+                    className="text-black dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span className="group-hover:translate-x-1 transition-transform duration-200">
                       {link.label}
@@ -166,7 +166,7 @@ export function FooterEnhanced() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Company</h4>
+            <h4 className="font-semibold text-black dark:text-white mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <motion.li
@@ -178,7 +178,7 @@ export function FooterEnhanced() {
                 >
                   <Link
                     href={link.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm group"
+                    className="text-black dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm group"
                   >
                     <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">
                       {link.label}
@@ -196,7 +196,7 @@ export function FooterEnhanced() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Resources</h4>
+            <h4 className="font-semibold text-black dark:text-white mb-4">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link, index) => (
                 <motion.li
@@ -210,7 +210,7 @@ export function FooterEnhanced() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm group"
+                    className="text-black dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm group"
                   >
                     <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">
                       {link.label}
@@ -222,7 +222,7 @@ export function FooterEnhanced() {
 
             {/* Social Links */}
             <div className="mt-6">
-              <h5 className="font-medium text-gray-900 dark:text-gray-100 mb-3 text-sm">Connect</h5>
+              <h5 className="font-medium text-black dark:text-white mb-3 text-sm">Connect</h5>
               <div className="flex gap-3">
                 {footerLinks.social.map((social, index) => (
                   <motion.a
@@ -239,7 +239,7 @@ export function FooterEnhanced() {
                     className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-brand-100 dark:hover:bg-brand-900/20 transition-colors"
                     aria-label={social.label}
                   >
-                    <social.icon className="w-4 h-4 text-gray-600 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors" />
+                    <social.icon className="w-4 h-4 text-black dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors" />
                   </motion.a>
                 ))}
               </div>
@@ -268,7 +268,7 @@ export function FooterEnhanced() {
               </motion.div>
             </div>
             
-            <div className="flex items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
+            <div className="flex items-center gap-6 text-sm text-black dark:text-white">
               <span>© 2024 priv QR</span>
               <span>•</span>
               <span>Open Source</span>

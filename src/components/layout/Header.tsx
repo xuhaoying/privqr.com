@@ -83,7 +83,7 @@ export function Header() {
                   className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 group ${
                     pathname === link.href
                       ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/20'
-                      : 'text-gray-700 hover:bg-brand-50 hover:text-brand-700 dark:text-gray-300 dark:hover:bg-brand-900/20'
+                      : 'text-black hover:bg-brand-50 hover:text-brand-700 dark:text-gray-300 dark:hover:bg-brand-900/20'
                   }`}
                 >
                   <span className="relative z-10 flex items-center gap-1">
@@ -111,7 +111,7 @@ export function Header() {
               href="https://github.com/xuhaoying/privqr.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="text-black hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               <Github className="w-5 h-5" />
             </Link>
@@ -128,7 +128,7 @@ export function Header() {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800"
+            className="md:hidden p-2 rounded-lg text-black hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
@@ -156,7 +156,7 @@ export function Header() {
                 className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                   pathname === link.href
                     ? 'bg-brand-500 text-white'
-                    : 'text-gray-700 hover:bg-brand-50 hover:text-brand-700 dark:text-gray-300 dark:hover:bg-brand-900/20'
+                    : 'text-black hover:bg-brand-50 hover:text-brand-700 dark:text-gray-300 dark:hover:bg-brand-900/20'
                 }`}
               >
                 <span className="flex items-center gap-2">
@@ -175,7 +175,7 @@ export function Header() {
                 href="https://github.com/xuhaoying/privqr.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 px-4 py-2"
+                className="flex items-center gap-2 text-black hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 px-4 py-2"
               >
                 <Github className="w-5 h-5" />
                 GitHub

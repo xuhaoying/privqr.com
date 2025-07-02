@@ -145,7 +145,7 @@ export default function MatterPageEnhanced() {
         <TextEffect
           preset="fade-in-blur"
           as="p"
-          className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
+          className="text-xl text-black dark:text-white max-w-3xl mx-auto mb-8"
         >
           Generate CSA-compliant Matter commissioning QR codes for seamless IoT device pairing. 
           Full TLV validation and industry-standard compatibility included.
@@ -164,7 +164,7 @@ export default function MatterPageEnhanced() {
             <div className="flex justify-center mb-3">
               <stat.icon className="w-8 h-8 text-brand-500" />
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">
+            <div className="text-2xl font-bold text-black dark:text-white mb-1">
               <NumberTicker 
                 value={stat.value} 
                 delay={index * 0.2}
@@ -172,7 +172,7 @@ export default function MatterPageEnhanced() {
               />
               {stat.suffix}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-sm text-black dark:text-white">
               {stat.label}
             </div>
           </MagicCard>
@@ -202,7 +202,7 @@ export default function MatterPageEnhanced() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.1 }}
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                  <h3 className="text-lg font-semibold text-black dark:text-white mb-4 flex items-center gap-2">
                     <Cpu className="w-5 h-5 text-brand-500" />
                     Device Information
                   </h3>
@@ -210,7 +210,7 @@ export default function MatterPageEnhanced() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-black dark:text-white mb-2">
                       Vendor ID (VID) *
                     </label>
                     <Input
@@ -223,7 +223,7 @@ export default function MatterPageEnhanced() {
                   </div>
             
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-black dark:text-white mb-2">
                       Product ID (PID) *
                     </label>
                     <Input
@@ -236,7 +236,7 @@ export default function MatterPageEnhanced() {
                   </div>
             
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-black dark:text-white mb-2">
                       Setup PIN *
                     </label>
                     <Input
@@ -247,11 +247,11 @@ export default function MatterPageEnhanced() {
                       maxLength={8}
                       className="font-mono"
                     />
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">8 digits, avoid sequential or repeated numbers</p>
+                    <p className="text-xs text-black dark:text-white mt-1">8 digits, avoid sequential or repeated numbers</p>
                   </div>
             
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-black dark:text-white mb-2">
                       Discriminator *
                     </label>
                     <Input
@@ -261,7 +261,7 @@ export default function MatterPageEnhanced() {
                       placeholder="3840"
                       className="font-mono"
                     />
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">0-4095 (12 bits)</p>
+                    <p className="text-xs text-black dark:text-white mt-1">0-4095 (12 bits)</p>
                   </div>
                 </div>
 
@@ -416,7 +416,7 @@ export default function MatterPageEnhanced() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         onClick={handleDownloadReport}
-                        className="w-full px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 flex items-center justify-center gap-2"
+                        className="w-full px-4 py-2 bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 flex items-center justify-center gap-2"
                       >
                         <Download className="w-4 h-4" />
                         Download Validation Report
@@ -456,10 +456,10 @@ export default function MatterPageEnhanced() {
                 <Zap className="w-6 h-6 text-amber-600 dark:text-amber-400" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                <h3 className="font-semibold text-black dark:text-white mb-1">
                   Professional Features
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-black dark:text-white">
                   TLV validation included • CSA compliant • Industry standard commissioning
                 </p>
               </div>
@@ -478,10 +478,10 @@ export default function MatterPageEnhanced() {
                 <Smartphone className="w-6 h-6 text-brand-600 dark:text-brand-400" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                <h3 className="font-semibold text-black dark:text-white mb-1">
                   Universal Compatibility
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-black dark:text-white">
                   QR size ≥30mm² recommended • Test with Google Home, Apple Home, or Amazon Alexa
                 </p>
               </div>

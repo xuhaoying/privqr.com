@@ -87,7 +87,7 @@ export function RelatedContent({ currentPage, maxItems = 4 }: RelatedContentProp
 
   return (
     <section className="mt-16 mb-8">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+      <h2 className="text-2xl font-bold text-black dark:text-white mb-6">
         Explore More Tools
       </h2>
       
@@ -109,12 +109,12 @@ export function RelatedContent({ currentPage, maxItems = 4 }: RelatedContentProp
                     {item.category === 'tool' ? 'Generator' : 'Info'}
                   </span>
                 </div>
-                <h3 className="font-semibold text-gray-900 dark:text-gray-100 leading-tight">
+                <h3 className="font-semibold text-black dark:text-white leading-tight">
                   {item.title}
                 </h3>
               </CardHeader>
               <CardContent className="pt-0">
-                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+                <p className="text-sm text-black dark:text-white mb-4 line-clamp-2">
                   {item.description}
                 </p>
                 <Link href={item.href}>

@@ -103,7 +103,7 @@ export default function ThreeDPageEnhanced() {
         <TextEffect
           preset="fade-in-blur"
           as="p"
-          className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
+          className="text-xl text-black dark:text-white max-w-3xl mx-auto mb-8"
         >
           Generate physical QR codes optimized for 3D printing with customizable thickness, 
           dimensions, and high error correction for reliable scanning.
@@ -122,7 +122,7 @@ export default function ThreeDPageEnhanced() {
             <div className="flex justify-center mb-3">
               <stat.icon className="w-8 h-8 text-brand-500" />
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">
+            <div className="text-2xl font-bold text-black dark:text-white mb-1">
               <NumberTicker 
                 value={stat.value} 
                 delay={index * 0.2}
@@ -130,7 +130,7 @@ export default function ThreeDPageEnhanced() {
               />
               {stat.suffix}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-sm text-black dark:text-white">
               {stat.label}
             </div>
           </MagicCard>
@@ -152,7 +152,7 @@ export default function ThreeDPageEnhanced() {
                 <Box className="w-6 h-6 text-brand-500" />
                 Generate 3D QR Model
               </CardTitle>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-black dark:text-white">
                 Create QR codes optimized for 3D printing with customizable thickness and dimensions
               </p>
             </CardHeader>
@@ -162,7 +162,7 @@ export default function ThreeDPageEnhanced() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-black dark:text-white mb-2">
                   QR Code Content *
                 </label>
                 <Input
@@ -352,15 +352,15 @@ export default function ThreeDPageEnhanced() {
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">Layer Height: 0.2mm</span>
+                        <span className="text-sm text-black dark:text-white">Layer Height: 0.2mm</span>
                       </div>
                       <div className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">Infill: 100% for durability</span>
+                        <span className="text-sm text-black dark:text-white">Infill: 100% for durability</span>
                       </div>
                       <div className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">Support: Not required</span>
+                        <span className="text-sm text-black dark:text-white">Support: Not required</span>
                       </div>
                       <div className="flex items-center gap-2 p-2 bg-brand-50 dark:bg-brand-900/20 rounded-lg">
                         <Ruler className="w-4 h-4 text-brand-500" />
