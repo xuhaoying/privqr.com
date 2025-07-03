@@ -103,7 +103,7 @@ export default function ThreeDPageEnhanced() {
         <TextEffect
           preset="fade-in-blur"
           as="p"
-          className="text-xl text-black dark:text-white max-w-3xl mx-auto mb-8"
+          className="text-xl text-gray-900 max-w-3xl mx-auto mb-8"
         >
           Generate physical QR codes optimized for 3D printing with customizable thickness, 
           dimensions, and high error correction for reliable scanning.
@@ -122,7 +122,7 @@ export default function ThreeDPageEnhanced() {
             <div className="flex justify-center mb-3">
               <stat.icon className="w-8 h-8 text-brand-500" />
             </div>
-            <div className="text-2xl font-bold text-black dark:text-white mb-1">
+            <div className="text-2xl font-bold text-gray-900 mb-1">
               <NumberTicker 
                 value={stat.value} 
                 delay={index * 0.2}
@@ -130,7 +130,7 @@ export default function ThreeDPageEnhanced() {
               />
               {stat.suffix}
             </div>
-            <div className="text-sm text-black dark:text-white">
+            <div className="text-sm text-gray-700">
               {stat.label}
             </div>
           </MagicCard>
@@ -152,7 +152,7 @@ export default function ThreeDPageEnhanced() {
                 <Box className="w-6 h-6 text-brand-500" />
                 Generate 3D QR Model
               </CardTitle>
-              <p className="text-black dark:text-white">
+              <p className="text-gray-700">
                 Create QR codes optimized for 3D printing with customizable thickness and dimensions
               </p>
             </CardHeader>
@@ -162,7 +162,7 @@ export default function ThreeDPageEnhanced() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
-                <label className="block text-sm font-medium text-black dark:text-white mb-2">
+                <label className="block text-sm font-medium text-gray-900 mb-2">
                   QR Code Content *
                 </label>
                 <Input
@@ -178,16 +178,16 @@ export default function ThreeDPageEnhanced() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-lg p-4"
+                className="bg-brand-50 border border-brand-200 rounded-lg p-4"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Settings className="w-5 h-5 text-brand-600 dark:text-brand-400" />
-                  <h3 className="text-lg font-semibold text-brand-800 dark:text-brand-300">3D Print Dimensions</h3>
+                  <Settings className="w-5 h-5 text-brand-600" />
+                  <h3 className="text-lg font-semibold text-brand-800">3D Print Dimensions</h3>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-brand-700 dark:text-brand-300 mb-2 flex items-center gap-1">
+                    <label className="block text-sm font-medium text-brand-700 mb-2 flex items-center gap-1">
                       <Ruler className="w-4 h-4" />
                       Size (mm)
                     </label>
@@ -198,13 +198,13 @@ export default function ThreeDPageEnhanced() {
                       min="50"
                       max="500"
                       step="10"
-                      className="bg-white dark:bg-gray-800"
+                      className="bg-white"
                     />
-                    <p className="text-xs text-brand-600 dark:text-brand-400 mt-1">Width & Height</p>
+                    <p className="text-xs text-brand-600 mt-1">Width & Height</p>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-brand-700 dark:text-brand-300 mb-2 flex items-center gap-1">
+                    <label className="block text-sm font-medium text-brand-700 mb-2 flex items-center gap-1">
                       <Layers className="w-4 h-4" />
                       Thickness (mm)
                     </label>
@@ -215,13 +215,13 @@ export default function ThreeDPageEnhanced() {
                       min="0.5"
                       max="10"
                       step="0.5"
-                      className="bg-white dark:bg-gray-800"
+                      className="bg-white"
                     />
-                    <p className="text-xs text-brand-600 dark:text-brand-400 mt-1">QR Pattern Height</p>
+                    <p className="text-xs text-brand-600 mt-1">QR Pattern Height</p>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-brand-700 dark:text-brand-300 mb-2 flex items-center gap-1">
+                    <label className="block text-sm font-medium text-brand-700 mb-2 flex items-center gap-1">
                       <Box className="w-4 h-4" />
                       Base Height (mm)
                     </label>
@@ -232,9 +232,9 @@ export default function ThreeDPageEnhanced() {
                       min="0"
                       max="5"
                       step="0.1"
-                      className="bg-white dark:bg-gray-800"
+                      className="bg-white"
                     />
-                    <p className="text-xs text-brand-600 dark:text-brand-400 mt-1">Foundation Layer</p>
+                    <p className="text-xs text-brand-600 mt-1">Foundation Layer</p>
                   </div>
                 </div>
                 
@@ -242,9 +242,9 @@ export default function ThreeDPageEnhanced() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="mt-4 p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg"
+                  className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg"
                 >
-                  <p className="text-xs text-amber-800 dark:text-amber-300 flex items-center gap-2">
+                  <p className="text-xs text-amber-800 flex items-center gap-2">
                     <Printer className="w-4 h-4" />
                     Final size: {size}mm × {size}mm × {parseFloat(thickness) + parseFloat(baseHeight)}mm
                   </p>
@@ -332,7 +332,7 @@ export default function ThreeDPageEnhanced() {
                         Download STL File
                       </ShimmerButton>
                       <button
-                        className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-lg cursor-not-allowed transition-colors"
+                        className="w-full px-4 py-2 bg-gray-200 text-gray-500 rounded-lg cursor-not-allowed transition-colors"
                         disabled
                       >
                         Download OBJ File (Coming Soon)
@@ -350,21 +350,21 @@ export default function ThreeDPageEnhanced() {
                       Recommended Print Settings
                     </h3>
                     <div className="space-y-2">
-                      <div className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                      <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm text-black dark:text-white">Layer Height: 0.2mm</span>
+                        <span className="text-sm text-gray-900">Layer Height: 0.2mm</span>
                       </div>
-                      <div className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                      <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm text-black dark:text-white">Infill: 100% for durability</span>
+                        <span className="text-sm text-gray-900">Infill: 100% for durability</span>
                       </div>
-                      <div className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                      <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span className="text-sm text-black dark:text-white">Support: Not required</span>
+                        <span className="text-sm text-gray-900">Support: Not required</span>
                       </div>
-                      <div className="flex items-center gap-2 p-2 bg-brand-50 dark:bg-brand-900/20 rounded-lg">
+                      <div className="flex items-center gap-2 p-2 bg-brand-50 rounded-lg">
                         <Ruler className="w-4 h-4 text-brand-500" />
-                        <span className="text-sm text-brand-700 dark:text-brand-300 font-medium">
+                        <span className="text-sm text-brand-700 font-medium">
                           Final: {size}mm × {size}mm × {parseFloat(thickness) + parseFloat(baseHeight)}mm
                         </span>
                       </div>
@@ -384,7 +384,7 @@ export default function ThreeDPageEnhanced() {
         transition={{ duration: 0.6, delay: 0.6 }}
         className="mt-12"
       >
-        <MagicCard className="bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-900/20 dark:to-brand-800/20 border-brand-200 dark:border-brand-800">
+        <MagicCard className="bg-gradient-to-r from-brand-50 to-brand-100 border-brand-200">
           <CardContent className="p-6">
             <div className="flex items-start gap-4">
               <motion.div
@@ -395,10 +395,10 @@ export default function ThreeDPageEnhanced() {
                 🖨️
               </motion.div>
               <div>
-                <h3 className="font-semibold text-brand-800 dark:text-brand-300 mb-2">
+                <h3 className="font-semibold text-brand-800 mb-2">
                   3D Printing Tips for Best Results
                 </h3>
-                <div className="space-y-2 text-sm text-brand-700 dark:text-brand-300">
+                <div className="space-y-2 text-sm text-brand-700">
                   <p className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-brand-500 rounded-full"></span>
                     Use high contrast materials: white base with dark raised areas

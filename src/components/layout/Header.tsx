@@ -28,7 +28,7 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md dark:bg-gray-900/80 dark:border-gray-800"
+      className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur-md border-gray-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -83,7 +83,7 @@ export function Header() {
                   className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 group ${
                     pathname === link.href
                       ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/20'
-                      : 'text-black hover:bg-brand-50 hover:text-brand-700 dark:text-gray-300 dark:hover:bg-brand-900/20'
+                      : 'text-gray-700 hover:bg-brand-50 hover:text-brand-700'
                   }`}
                 >
                   <span className="relative z-10 flex items-center gap-1">
@@ -111,7 +111,7 @@ export function Header() {
               href="https://github.com/xuhaoying/privqr.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="text-gray-700 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100"
             >
               <Github className="w-5 h-5" />
             </Link>
@@ -128,7 +128,7 @@ export function Header() {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-black hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800"
+            className="md:hidden p-2 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-gray-100"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
@@ -140,7 +140,7 @@ export function Header() {
         initial={false}
         animate={isMenuOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="md:hidden overflow-hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800"
+        className="md:hidden overflow-hidden bg-white border-t border-gray-200"
       >
         <div className="px-4 py-4 space-y-2">
           {navLinks.map((link, index) => (
@@ -156,7 +156,7 @@ export function Header() {
                 className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                   pathname === link.href
                     ? 'bg-brand-500 text-white'
-                    : 'text-black hover:bg-brand-50 hover:text-brand-700 dark:text-gray-300 dark:hover:bg-brand-900/20'
+                    : 'text-gray-700 hover:bg-brand-50 hover:text-brand-700'
                 }`}
               >
                 <span className="flex items-center gap-2">
@@ -169,13 +169,13 @@ export function Header() {
             </motion.div>
           ))}
           
-          <div className="pt-4 border-t dark:border-gray-800">
+          <div className="pt-4 border-t border-gray-200">
             <div className="flex flex-col space-y-3">
               <Link
                 href="https://github.com/xuhaoying/privqr.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-black hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 px-4 py-2"
+                className="flex items-center gap-2 text-gray-700 hover:text-gray-900 px-4 py-2"
               >
                 <Github className="w-5 h-5" />
                 GitHub

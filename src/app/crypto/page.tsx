@@ -173,7 +173,7 @@ export default function CryptoPageEnhanced() {
         <TextEffect
           preset="fade-in-blur"
           as="p"
-          className="text-xl text-black dark:text-white max-w-3xl mx-auto mb-8"
+          className="text-xl text-gray-900 max-w-3xl mx-auto mb-8"
         >
           Generate professional cryptocurrency payment QR codes with full compliance to industry standards. 
           Support for Bitcoin (BIP-21), Ethereum (EIP-681), and Lightning Network (BOLT-11).
@@ -196,26 +196,26 @@ export default function CryptoPageEnhanced() {
               <CardTitle className="text-2xl mb-4">Generate Crypto QR Code</CardTitle>
               
               {/* Tab Navigation */}
-              <div className="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="flex p-1 bg-gray-100  rounded-lg">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`relative flex-1 px-4 py-3 text-sm font-medium rounded-md transition-all duration-300 flex items-center justify-center gap-2 ${
                       activeTab === tab.id
-                        ? 'bg-white dark:bg-gray-700 text-black dark:text-white shadow-lg'
-                        : 'text-black dark:text-white hover:text-gray-900 dark:hover:text-gray-200'
+                        ? 'bg-white text-gray-900 shadow-lg'
+                        : 'text-gray-700 hover:text-gray-900'
                     }`}
                   >
                     <tab.icon className="w-4 h-4" />
                     <span>{tab.label}</span>
-                    <span className="text-xs px-2 py-1 bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 rounded-full">
+                    <span className="text-xs px-2 py-1 bg-brand-100 text-brand-700 rounded-full">
                       {tab.badge}
                     </span>
                     {activeTab === tab.id && (
                       <motion.div
                         layoutId="activeTab"
-                        className="absolute inset-0 bg-white dark:bg-gray-700 rounded-md shadow-lg -z-10"
+                        className="absolute inset-0 bg-white rounded-md shadow-lg -z-10"
                         initial={false}
                         transition={{ type: "spring", stiffness: 500, damping: 30 }}
                       />
@@ -237,7 +237,7 @@ export default function CryptoPageEnhanced() {
                     className="space-y-6"
                   >
                     <div>
-                      <label className="block text-sm font-medium text-black dark:text-white mb-2">
+                      <label className="block text-sm font-medium text-gray-900 mb-2">
                         Bitcoin Address *
                       </label>
                       <Input
@@ -251,7 +251,7 @@ export default function CryptoPageEnhanced() {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-black dark:text-white mb-2">
+                        <label className="block text-sm font-medium text-gray-900 mb-2">
                           Amount (BTC)
                         </label>
                         <Input
@@ -264,7 +264,7 @@ export default function CryptoPageEnhanced() {
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium text-black dark:text-white mb-2">
+                        <label className="block text-sm font-medium text-gray-900 mb-2">
                           Label
                         </label>
                         <Input
@@ -277,7 +277,7 @@ export default function CryptoPageEnhanced() {
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-black dark:text-white mb-2">
+                      <label className="block text-sm font-medium text-gray-900 mb-2">
                         Message
                       </label>
                       <Input
@@ -300,7 +300,7 @@ export default function CryptoPageEnhanced() {
                     className="space-y-6"
                   >
                     <div>
-                      <label className="block text-sm font-medium text-black dark:text-white mb-2">
+                      <label className="block text-sm font-medium text-gray-900 mb-2">
                         Ethereum Address *
                       </label>
                       <Input
@@ -314,7 +314,7 @@ export default function CryptoPageEnhanced() {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-black dark:text-white mb-2">
+                        <label className="block text-sm font-medium text-gray-900 mb-2">
                           Amount (ETH)
                         </label>
                         <Input
@@ -327,13 +327,13 @@ export default function CryptoPageEnhanced() {
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium text-black dark:text-white mb-2">
+                        <label className="block text-sm font-medium text-gray-900 mb-2">
                           Chain ID
                         </label>
                         <select
                           value={ethChainId}
                           onChange={(e) => setEthChainId(e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white "
                         >
                           <option value="1">Mainnet (1)</option>
                           <option value="137">Polygon (137)</option>
@@ -344,7 +344,7 @@ export default function CryptoPageEnhanced() {
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-black dark:text-white mb-2">
+                      <label className="block text-sm font-medium text-gray-900 mb-2">
                         Gas Limit
                       </label>
                       <Input
@@ -367,7 +367,7 @@ export default function CryptoPageEnhanced() {
                     className="space-y-6"
                   >
                     <div>
-                      <label className="block text-sm font-medium text-black dark:text-white mb-2">
+                      <label className="block text-sm font-medium text-gray-900 mb-2">
                         Lightning Invoice *
                       </label>
                       <textarea
@@ -375,7 +375,7 @@ export default function CryptoPageEnhanced() {
                         onChange={(e) => setLnInvoice(e.target.value)}
                         placeholder="lnbc100n1p3..."
                         rows={4}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800 dark:border-gray-600 font-mono text-sm"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white  dark:border-gray-600 font-mono text-sm"
                       />
                     </div>
                     
@@ -447,10 +447,10 @@ export default function CryptoPageEnhanced() {
               <Globe className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             </div>
             <div>
-              <h3 className="font-semibold text-black dark:text-white mb-1">
+              <h3 className="font-semibold text-gray-900 mb-1">
                 Universal Compatibility
               </h3>
-              <p className="text-sm text-black dark:text-white">
+              <p className="text-sm text-gray-900">
                 Generated QR codes are {activeTab === 'bitcoin' ? 'BIP-21' : activeTab === 'ethereum' ? 'EIP-681' : 'BOLT-11'} compatible and work with all major wallets including Coinbase, MetaMask, Trust Wallet, and hardware wallets.
               </p>
             </div>

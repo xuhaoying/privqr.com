@@ -35,19 +35,19 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
       
       {/* Visual Breadcrumbs */}
       <nav 
-        className={`flex items-center space-x-2 text-sm text-black dark:text-white mb-6 ${className}`}
+        className={`flex items-center space-x-2 text-sm text-gray-900 mb-6 ${className}`}
         aria-label="Breadcrumb"
       >
         <ol className="flex items-center space-x-2">
           {items.map((item, index) => (
             <li key={index} className="flex items-center">
               {index > 0 && (
-                <ChevronRight className="w-4 h-4 mx-2 text-black" aria-hidden="true" />
+                <ChevronRight className="w-4 h-4 mx-2 text-gray-700" aria-hidden="true" />
               )}
               
               {item.current ? (
                 <span 
-                  className="text-black dark:text-white font-medium"
+                  className="text-gray-900 font-medium"
                   aria-current="page"
                 >
                   {index === 0 && <Home className="w-4 h-4 mr-1 inline" aria-hidden="true" />}
@@ -56,7 +56,7 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
               ) : item.href ? (
                 <Link 
                   href={item.href}
-                  className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-600 transition-colors"
                 >
                   {index === 0 && <Home className="w-4 h-4 mr-1 inline" aria-hidden="true" />}
                   {item.label}

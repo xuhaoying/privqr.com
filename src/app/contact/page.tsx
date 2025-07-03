@@ -61,7 +61,7 @@ export default function ContactPage() {
                   </label>
                   <textarea
                     rows={6}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800 dark:border-gray-600"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white"
                     placeholder="Tell us more about your question or feedback..."
                   />
                 </div>
@@ -218,7 +218,7 @@ export default function ContactPage() {
               </p>
               <ul className="text-sm text-brand-600 space-y-1 mt-2">
                 <li>• All data processing happens in your browser</li>
-                <li>• Daily limit: 50 QR codes, Batch limit: 20</li>
+                <li>• No limits on QR code generation</li>
                 <li>• Works completely offline after first load</li>
                 <li>• Supports Bitcoin, Ethereum, Lightning payments</li>
                 <li>• Free and open source forever</li>

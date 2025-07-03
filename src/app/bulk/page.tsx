@@ -129,7 +129,7 @@ export default function BulkPageEnhanced() {
         <TextEffect
           preset="fade-in-blur"
           as="p"
-          className="text-xl text-black dark:text-white max-w-3xl mx-auto mb-8"
+          className="text-xl text-gray-900 max-w-3xl mx-auto mb-8"
         >
           Process hundreds of QR codes simultaneously with our enterprise-grade batch generator. 
           Upload CSV, customize settings, and download your complete collection.
@@ -164,7 +164,7 @@ export default function BulkPageEnhanced() {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 onDrop={handleDrop}
                 onDragOver={(e) => e.preventDefault()}
-                className="relative border-2 border-dashed border-brand-300 dark:border-brand-700 rounded-xl p-8 text-center mb-6 bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-900/20 dark:to-brand-800/20 hover:from-brand-100 hover:to-brand-200 dark:hover:from-brand-800/30 dark:hover:to-brand-700/30 transition-all duration-300 cursor-pointer group"
+                className="relative border-2 border-dashed border-brand-300 rounded-xl p-8 text-center mb-6 bg-gradient-to-br from-brand-50 to-brand-100 hover:from-brand-100 hover:to-brand-200 transition-all duration-300 cursor-pointer group"
                 onClick={() => fileInputRef.current?.click()}
               >
                 <motion.div
@@ -177,10 +177,10 @@ export default function BulkPageEnhanced() {
                 >
                   {file ? '✅' : '📄'}
                 </motion.div>
-                <h3 className="text-lg font-semibold text-black dark:text-white mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">
                   {file ? 'File Selected' : 'Upload CSV File'}
                 </h3>
-                <p className="text-black dark:text-white mb-4">Drop your CSV here or click to browse</p>
+                <p className="text-gray-900 mb-4">Drop your CSV here or click to browse</p>
                 
                 <input
                   ref={fileInputRef}
@@ -202,9 +202,9 @@ export default function BulkPageEnhanced() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="mt-4 p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg"
+                  className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg"
                 >
-                  <p className="text-xs text-amber-800 dark:text-amber-300">
+                  <p className="text-xs text-amber-800">
                     Format: type,data,label<br />
                     No limits - process as many QR codes as you need!
                   </p>
@@ -218,15 +218,15 @@ export default function BulkPageEnhanced() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
-                    className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg"
+                    className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg"
                   >
                     <div className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400" />
+                      <CheckCircle2 className="w-5 h-5 text-green-600" />
                       <div>
-                        <p className="text-sm font-medium text-green-800 dark:text-green-300">
+                        <p className="text-sm font-medium text-green-800">
                           File Ready for Processing
                         </p>
-                        <p className="text-xs text-green-600 dark:text-green-400">
+                        <p className="text-xs text-green-600">
                           {file.name} • {(file.size / 1024).toFixed(1)} KB
                         </p>
                       </div>
@@ -240,22 +240,22 @@ export default function BulkPageEnhanced() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-lg p-4 mb-6"
+                className="bg-brand-50 border border-brand-200 rounded-lg p-4 mb-6"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Layers className="w-5 h-5 text-brand-600 dark:text-brand-400" />
-                  <h3 className="text-lg font-semibold text-brand-800 dark:text-brand-300">Output Settings</h3>
+                  <Layers className="w-5 h-5 text-brand-600" />
+                  <h3 className="text-lg font-semibold text-brand-800">Output Settings</h3>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className="block text-sm font-medium text-brand-700 dark:text-brand-300 mb-2">
+                    <label className="block text-sm font-medium text-brand-700 mb-2">
                       Format
                     </label>
                     <select
                       value={format}
                       onChange={(e) => setFormat(e.target.value as 'png' | 'svg')}
-                      className="w-full px-3 py-2 border border-brand-300 dark:border-brand-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800 text-brand-900 dark:text-brand-100"
+                      className="w-full px-3 py-2 border border-brand-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white text-brand-900"
                     >
                       <option value="png">PNG (Raster)</option>
                       <option value="svg">SVG (Vector)</option>
@@ -263,13 +263,13 @@ export default function BulkPageEnhanced() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-brand-700 dark:text-brand-300 mb-2">
+                    <label className="block text-sm font-medium text-brand-700 mb-2">
                       Size
                     </label>
                     <select
                       value={size}
                       onChange={(e) => setSize(e.target.value)}
-                      className="w-full px-3 py-2 border border-brand-300 dark:border-brand-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800 text-brand-900 dark:text-brand-100"
+                      className="w-full px-3 py-2 border border-brand-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white text-brand-900"
                     >
                       <option value="200">200x200 (Small)</option>
                       <option value="400">400x400 (Medium)</option>
@@ -290,7 +290,7 @@ export default function BulkPageEnhanced() {
                       onChange={(e) => setIncludeLabels(e.target.checked)}
                       className="mr-3 text-brand-600 rounded focus:ring-brand-500"
                     />
-                    <span className="text-sm text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200 transition-colors">Include labels in filenames</span>
+                    <span className="text-sm text-brand-700 group-hover:text-brand-800 transition-colors">Include labels in filenames</span>
                   </motion.label>
                   
                   <motion.label 
@@ -304,7 +304,7 @@ export default function BulkPageEnhanced() {
                       onChange={(e) => setErrorCorrection(e.target.checked)}
                       className="mr-3 text-brand-600 rounded focus:ring-brand-500"
                     />
-                    <span className="text-sm text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200 transition-colors">High error correction</span>
+                    <span className="text-sm text-brand-700 group-hover:text-brand-800 transition-colors">High error correction</span>
                   </motion.label>
                 </div>
               </motion.div>
@@ -317,11 +317,11 @@ export default function BulkPageEnhanced() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
-                    className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg"
+                    className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg"
                   >
                     <div className="flex items-center gap-3">
-                      <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
-                      <p className="text-sm text-red-800 dark:text-red-300">{error}</p>
+                      <AlertCircle className="w-5 h-5 text-red-600" />
+                      <p className="text-sm text-red-800">{error}</p>
                     </div>
                   </motion.div>
                 )}
@@ -350,7 +350,7 @@ export default function BulkPageEnhanced() {
                 
                 <button
                   onClick={handleDownloadSample}
-                  className="w-full px-4 py-2 bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 flex items-center justify-center gap-2"
+                  className="w-full px-4 py-2 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   <Download className="w-4 h-4" />
                   Download Sample CSV
@@ -384,10 +384,10 @@ export default function BulkPageEnhanced() {
                     className="space-y-6"
                   >
                     <div className="text-center">
-                      <h4 className="text-lg font-medium text-black dark:text-white mb-2">
+                      <h4 className="text-lg font-medium text-gray-900 mb-2">
                         Processing Batch
                       </h4>
-                      <p className="text-sm text-black dark:text-white">
+                      <p className="text-sm text-gray-900">
                         {currentItem} of {totalItems} items completed
                       </p>
                     </div>
@@ -405,12 +405,12 @@ export default function BulkPageEnhanced() {
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.1 }}
-                            className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-center bg-white dark:bg-gray-800"
+                            className="border border-gray-200 rounded-lg p-3 text-center bg-white"
                           >
-                            <div className="w-16 h-16 bg-gradient-to-br from-brand-100 to-brand-200 dark:from-brand-900 dark:to-brand-800 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                              <CheckCircle2 className="w-8 h-8 text-brand-600 dark:text-brand-400" />
+                            <div className="w-16 h-16 bg-gradient-to-br from-brand-100 to-brand-200 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                              <CheckCircle2 className="w-8 h-8 text-brand-600" />
                             </div>
-                            <p className="text-xs text-black dark:text-white truncate">
+                            <p className="text-xs text-gray-900 truncate">
                               {item.label || item.id}
                             </p>
                           </motion.div>
@@ -420,23 +420,23 @@ export default function BulkPageEnhanced() {
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.3 }}
-                            className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-center bg-white dark:bg-gray-800"
+                            className="border border-gray-200 rounded-lg p-3 text-center bg-white"
                           >
-                            <div className="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                              <span className="text-sm font-medium text-black dark:text-white">+{totalItems - 3}</span>
+                            <div className="w-16 h-16 bg-gray-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                              <span className="text-sm font-medium text-gray-900">+{totalItems - 3}</span>
                             </div>
-                            <p className="text-xs text-black dark:text-white">More items</p>
+                            <p className="text-xs text-gray-900">More items</p>
                           </motion.div>
                         )}
                       </motion.div>
                     )}
                     
                     <div className="space-y-2">
-                      <div className="flex justify-between text-sm text-black dark:text-white">
+                      <div className="flex justify-between text-sm text-gray-900">
                         <span>Progress</span>
                         <span>{Math.round(progress)}%</span>
                       </div>
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                      <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                         <motion.div
                           className="bg-gradient-to-r from-brand-500 to-brand-600 h-full rounded-full"
                           initial={{ width: 0 }}
@@ -462,10 +462,10 @@ export default function BulkPageEnhanced() {
                     >
                       📦
                     </motion.div>
-                    <h3 className="text-lg font-semibold text-black dark:text-white mb-2">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       Ready for Bulk Processing
                     </h3>
-                    <p className="text-black dark:text-white">
+                    <p className="text-gray-900">
                       Upload your CSV file and start generating QR codes in batch
                     </p>
                   </motion.div>
@@ -485,13 +485,13 @@ export default function BulkPageEnhanced() {
       >
         <MagicCard className="p-6">
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-brand-100 dark:bg-brand-900/30 rounded-lg">
-              <FileText className="w-5 h-5 text-brand-600 dark:text-brand-400" />
+            <div className="p-2 bg-brand-100 rounded-lg">
+              <FileText className="w-5 h-5 text-brand-600" />
             </div>
-            <h3 className="text-lg font-semibold text-brand-900 dark:text-brand-100">CSV Format Guide</h3>
+            <h3 className="text-lg font-semibold text-brand-900">CSV Format Guide</h3>
           </div>
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-black dark:text-white font-mono leading-relaxed">
+          <div className="bg-gray-50 rounded-lg p-4 overflow-x-auto">
+            <pre className="text-sm text-gray-900 font-mono leading-relaxed">
 {`type,data,label
 url,https://example.com,Example Website
 text,Hello World,Sample Text  
@@ -499,8 +499,8 @@ wifi,{"ssid":"MyNetwork","password":"pass123"},WiFi Network
 bitcoin,{"address":"bc1q...","amount":0.001},Payment`}
             </pre>
           </div>
-          <div className="mt-4 p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
-            <p className="text-xs text-amber-800 dark:text-amber-300 flex items-center gap-2">
+          <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+            <p className="text-xs text-amber-800 flex items-center gap-2">
               <AlertCircle className="w-4 h-4" />
               Supported types: url, text, wifi, bitcoin, ethereum, vcard, email, sms, phone
             </p>

@@ -12,11 +12,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 // Dynamic imports for heavy components
 const BentoGrid = dynamic(() => import('@/components/ui/bento-grid').then(mod => ({ default: mod.BentoGrid })), {
-  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 rounded-lg h-96" />
+  loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-96" />
 });
 
 const BentoCard = dynamic(() => import('@/components/ui/bento-grid').then(mod => ({ default: mod.BentoCard })), {
-  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 rounded-lg h-48" />
+  loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-48" />
 });
 
 const BorderBeam = dynamic(() => import('@/components/magicui/border-beam').then(mod => ({ default: mod.BorderBeam })), {
@@ -39,7 +39,7 @@ const features = [
     cta: 'Generate Crypto QR',
     Icon: Bitcoin,
     background: (
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-orange-200 to-amber-200 dark:from-orange-900/20 dark:to-amber-800/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-orange-100 to-amber-100" />
     ),
     className: "md:col-span-2",
   },
@@ -50,7 +50,7 @@ const features = [
     cta: 'Create Device Code',
     Icon: Wifi,
     background: (
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-100 via-brand-200 to-emerald-200 dark:from-brand-900/20 dark:to-emerald-800/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-50 via-brand-100 to-emerald-100" />
     ),
     className: "md:col-span-2",
   },
@@ -61,7 +61,7 @@ const features = [
     cta: 'Process CSV',
     Icon: Upload,
     background: (
-      <div className="absolute inset-0 bg-gradient-to-br from-green-100 via-green-200 to-teal-200 dark:from-green-900/20 dark:to-teal-800/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-green-100 to-teal-100" />
     ),
     className: "md:col-span-2",
   },
@@ -72,7 +72,7 @@ const features = [
     cta: 'Create 3D QR',
     Icon: Printer,
     background: (
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-purple-200 to-pink-200 dark:from-purple-900/20 dark:to-pink-800/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-purple-100 to-pink-100" />
     ),
     className: "md:col-span-2",
   },
@@ -116,8 +116,8 @@ export default function HomePage() {
               animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-full px-4 py-2 mb-6">
-                <span className="text-sm font-medium text-brand-700 dark:text-brand-300">
+              <div className="inline-flex items-center gap-2 bg-brand-50 border border-brand-200 rounded-full px-4 py-2 mb-6">
+                <span className="text-sm font-medium text-brand-700">
                   🎉 100% Privacy-First QR Generator
                 </span>
                 <div className="w-2 h-2 bg-brand-500 rounded-full animate-pulse" />
@@ -144,7 +144,7 @@ export default function HomePage() {
             <TextEffect
               preset="fade-in-blur"
               as="p"
-              className="text-xl lg:text-2xl text-black dark:text-white max-w-3xl mx-auto leading-relaxed"
+              className="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
             >
               Create crypto-ready, IoT-compatible, and business-grade QR codes with zero dependencies. 
               Everything happens in your browser - no servers, no data collection, no privacy concerns.
@@ -192,8 +192,8 @@ export default function HomePage() {
                   className="text-center"
                 >
                   <div className="text-4xl mb-2">{stat.icon}</div>
-                  <div className="text-3xl font-bold text-brand-600 dark:text-brand-400">{stat.number}</div>
-                  <div className="text-sm text-black dark:text-white">{stat.text}</div>
+                  <div className="text-3xl font-bold text-brand-600">{stat.number}</div>
+                  <div className="text-sm text-gray-600">{stat.text}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -215,7 +215,7 @@ export default function HomePage() {
                 Powerful Tools
               </AnimatedGradientText>
             </h2>
-            <p className="text-xl text-black dark:text-white max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
               Professional-grade QR code generation for every use case
             </p>
           </motion.div>
@@ -263,7 +263,7 @@ export default function HomePage() {
                   Privacy Protection
                 </AnimatedGradientText>
               </h2>
-              <p className="text-xl text-black dark:text-gray-300 mb-8">
+              <p className="text-xl text-gray-700 mb-8">
                 Watch as QR codes are generated entirely in your browser. No data ever leaves your device, 
                 ensuring complete privacy and security for your sensitive information.
               </p>
@@ -272,21 +272,21 @@ export default function HomePage() {
                   <CardContent className="pt-6">
                     <Shield className="w-8 h-8 text-brand-500 mx-auto mb-2" />
                     <h3 className="font-semibold">Zero Servers</h3>
-                    <p className="text-sm text-black">100% client-side</p>
+                    <p className="text-sm text-gray-600">100% client-side</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center">
                   <CardContent className="pt-6">
                     <Zap className="w-8 h-8 text-brand-500 mx-auto mb-2" />
                     <h3 className="font-semibold">Lightning Fast</h3>
-                    <p className="text-sm text-black">Sub-50ms generation</p>
+                    <p className="text-sm text-gray-600">Sub-50ms generation</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center">
                   <CardContent className="pt-6">
                     <Globe className="w-8 h-8 text-brand-500 mx-auto mb-2" />
                     <h3 className="font-semibold">Works Offline</h3>
-                    <p className="text-sm text-black">No internet needed</p>
+                    <p className="text-sm text-gray-600">No internet needed</p>
                   </CardContent>
                 </Card>
               </div>
@@ -302,27 +302,27 @@ export default function HomePage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="p-4 bg-brand-50 dark:bg-brand-900/20 rounded-lg">
-                    <h4 className="font-semibold text-brand-900 dark:text-brand-100 mb-2">
+                  <div className="p-4 bg-brand-50 rounded-lg">
+                    <h4 className="font-semibold text-brand-900 mb-2">
                       Zero Data Collection
                     </h4>
-                    <p className="text-sm text-brand-700 dark:text-brand-300">
+                    <p className="text-sm text-brand-700">
                       All QR codes are generated entirely in your browser. We never see, store, or transmit your data.
                     </p>
                   </div>
-                  <div className="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
-                    <h4 className="font-semibold text-emerald-900 dark:text-emerald-100 mb-2">
+                  <div className="p-4 bg-emerald-50 rounded-lg">
+                    <h4 className="font-semibold text-emerald-900 mb-2">
                       Open Source
                     </h4>
-                    <p className="text-sm text-emerald-700 dark:text-emerald-300">
+                    <p className="text-sm text-emerald-700">
                       Our code is 100% transparent and auditable. Verify our privacy claims yourself on GitHub.
                     </p>
                   </div>
-                  <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                    <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <h4 className="font-semibold text-blue-900 mb-2">
                       No Analytics
                     </h4>
-                    <p className="text-sm text-blue-700 dark:text-blue-300">
+                    <p className="text-sm text-blue-700">
                       We don&apos;t track usage, store statistics, or monitor activity. Your privacy is absolute.
                     </p>
                   </div>
@@ -349,7 +349,7 @@ export default function HomePage() {
                 QR codes?
               </AnimatedGradientText>
             </h2>
-            <p className="text-xl text-black dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
               Join thousands of users who trust priv QR for their professional QR code needs. 
               Start generating now, completely free.
             </p>

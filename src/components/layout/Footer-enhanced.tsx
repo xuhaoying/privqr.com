@@ -38,11 +38,11 @@ const trustFeatures = [
 
 export function FooterEnhanced() {
   return (
-    <footer className="relative bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 border-t border-gray-200 dark:border-gray-800">
+    <footer className="relative bg-gradient-to-b from-gray-50 to-white border-t border-gray-200">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-200/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 py-16">
@@ -76,7 +76,7 @@ export function FooterEnhanced() {
                 ✨
               </motion.div>
             </div>
-            <p className="text-black dark:text-white mb-6 leading-relaxed">
+            <p className="text-gray-700 mb-6 leading-relaxed">
               Privacy-first QR code generator for professionals. Generate Bitcoin, Ethereum, Lightning, 
               IoT device codes, and more - all in your browser with zero data collection.
             </p>
@@ -90,7 +90,7 @@ export function FooterEnhanced() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-3 text-sm text-black dark:text-white"
+                  className="flex items-center gap-3 text-sm text-gray-700"
                 >
                   <feature.icon className="w-4 h-4 text-brand-500" />
                   <span>{feature.text}</span>
@@ -106,14 +106,14 @@ export function FooterEnhanced() {
               viewport={{ once: true }}
               className="mt-8"
             >
-              <h4 className="font-semibold text-black dark:text-white mb-3">
+              <h4 className="font-semibold text-gray-900 mb-3">
                 Stay Updated
               </h4>
               <div className="flex gap-2">
                 <input
                   type="email"
                   placeholder="your@email.com"
-                  className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white dark:bg-gray-800 text-sm"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white text-gray-900 text-sm"
                 />
                 <ShimmerButton
                   background="rgba(16, 217, 163, 1)"
@@ -132,7 +132,7 @@ export function FooterEnhanced() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-black dark:text-white mb-4">Features</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">Features</h4>
             <ul className="space-y-3">
               {footerLinks.features.map((link, index) => (
                 <motion.li
@@ -144,7 +144,7 @@ export function FooterEnhanced() {
                 >
                   <Link
                     href={link.href}
-                    className="text-black dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm flex items-center gap-2 group"
+                    className="text-gray-700 hover:text-brand-600 transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span className="group-hover:translate-x-1 transition-transform duration-200">
                       {link.label}
@@ -165,7 +165,7 @@ export function FooterEnhanced() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-black dark:text-white mb-4">Company</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <motion.li
@@ -177,7 +177,7 @@ export function FooterEnhanced() {
                 >
                   <Link
                     href={link.href}
-                    className="text-black dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm group"
+                    className="text-gray-700 hover:text-brand-600 transition-colors text-sm group"
                   >
                     <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">
                       {link.label}
@@ -195,7 +195,7 @@ export function FooterEnhanced() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-black dark:text-white mb-4">Resources</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link, index) => (
                 <motion.li
@@ -209,7 +209,7 @@ export function FooterEnhanced() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-black dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm group"
+                    className="text-gray-700 hover:text-brand-600 transition-colors text-sm group"
                   >
                     <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">
                       {link.label}
@@ -221,7 +221,7 @@ export function FooterEnhanced() {
 
             {/* Social Links */}
             <div className="mt-6">
-              <h5 className="font-medium text-black dark:text-white mb-3 text-sm">Connect</h5>
+              <h5 className="font-medium text-gray-900 mb-3 text-sm">Connect</h5>
               <div className="flex gap-3">
                 {footerLinks.social.map((social, index) => (
                   <motion.a
@@ -235,10 +235,10 @@ export function FooterEnhanced() {
                     whileTap={{ scale: 0.95 }}
                     transition={{ duration: 0.2, delay: index * 0.05 }}
                     viewport={{ once: true }}
-                    className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-brand-100 dark:hover:bg-brand-900/20 transition-colors"
+                    className="p-2 bg-gray-100 rounded-lg hover:bg-brand-100 transition-colors"
                     aria-label={social.label}
                   >
-                    <social.icon className="w-4 h-4 text-black dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors" />
+                    <social.icon className="w-4 h-4 text-gray-700 hover:text-brand-600 transition-colors" />
                   </motion.a>
                 ))}
               </div>
@@ -252,22 +252,22 @@ export function FooterEnhanced() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="border-t border-gray-200 dark:border-gray-800 pt-8"
+          className="border-t border-gray-200 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-6">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-2 px-4 py-2 bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-full"
+                className="flex items-center gap-2 px-4 py-2 bg-brand-50 border border-brand-200 rounded-full"
               >
-                <Shield className="w-4 h-4 text-brand-600 dark:text-brand-400" />
-                <span className="text-sm font-medium text-brand-700 dark:text-brand-300">
+                <Shield className="w-4 h-4 text-brand-600" />
+                <span className="text-sm font-medium text-brand-700">
                   🔒 Your data never leaves your browser
                 </span>
               </motion.div>
             </div>
             
-            <div className="flex items-center gap-6 text-sm text-black dark:text-white">
+            <div className="flex items-center gap-6 text-sm text-gray-700">
               <span>© 2024 priv QR</span>
               <span>•</span>
               <span>Open Source</span>

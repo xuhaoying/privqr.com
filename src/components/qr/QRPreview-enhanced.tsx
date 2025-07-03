@@ -80,7 +80,7 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-lg font-semibold mb-6 text-black dark:text-white">
+          <h3 className="text-lg font-semibold mb-6 text-gray-900">
             QR Code Preview
           </h3>
         </motion.div>
@@ -93,11 +93,11 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                className="w-64 h-64 mx-auto bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-xl flex items-center justify-center"
+                className="w-64 h-64 mx-auto bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center"
               >
                 <div className="text-center">
                   <LoadingDots size="lg" />
-                  <p className="text-sm text-black dark:text-white mt-4">
+                  <p className="text-sm text-gray-900 mt-4">
                     Generating QR Code...
                   </p>
                 </div>
@@ -113,7 +113,7 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
               >
                 <div className="w-64 h-64 mx-auto mb-4 relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-500/20 to-brand-600/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-                  <div className="relative bg-white dark:bg-gray-900 rounded-xl p-4 shadow-2xl">
+                  <div className="relative bg-white rounded-xl p-4 shadow-2xl">
                     {result.format === 'svg' ? (
                       <div 
                         className="w-full h-full"
@@ -133,7 +133,7 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="text-sm text-black dark:text-white mb-6"
+                  className="text-sm text-gray-900 mb-6"
                 >
                   {label || 'QR Code'} • Generated offline
                 </motion.p>
@@ -144,11 +144,11 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                className="w-64 h-64 mx-auto bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 rounded-xl flex items-center justify-center border border-red-200 dark:border-red-800"
+                className="w-64 h-64 mx-auto bg-gradient-to-br from-red-50 to-red-100 rounded-xl flex items-center justify-center border border-red-200"
               >
                 <div className="text-center">
                   <div className="text-4xl mb-4">❌</div>
-                  <p className="text-sm text-red-600 dark:text-red-400 px-4">
+                  <p className="text-sm text-red-600 px-4">
                     {result.error}
                   </p>
                 </div>
@@ -158,7 +158,7 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
                 key="empty"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="w-64 h-64 mx-auto bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600"
+                className="w-64 h-64 mx-auto bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300"
               >
                 <div className="text-center">
                   <div className="text-4xl mb-4 space-x-1">
@@ -181,7 +181,7 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
                       ⬜
                     </motion.span>
                   </div>
-                  <p className="text-sm text-black dark:text-white">
+                  <p className="text-sm text-gray-900">
                     QR Preview
                   </p>
                 </div>
@@ -223,8 +223,8 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
               <button
                 onClick={handleCopy}
                 className={cn(
-                  "px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 flex items-center gap-2",
-                  copied && "border-green-500 bg-green-50 dark:bg-green-900/20"
+                  "px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-all duration-200 flex items-center gap-2",
+                  copied && "border-green-500 bg-green-50"
                 )}
               >
                 {copied ? (
@@ -243,7 +243,7 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
               {typeof navigator !== 'undefined' && 'share' in navigator && (
                 <button
                   onClick={handleShare}
-                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 flex items-center gap-2"
+                  className="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-all duration-200 flex items-center gap-2"
                 >
                   <Share2 className="w-4 h-4" />
                   Share
