@@ -294,7 +294,6 @@ export default function HomePage() {
             
             <div className="relative">
               <Card className="relative overflow-hidden">
-                <BorderBeam size={300} duration={15} />
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Shield className="w-5 h-5 text-brand-500" />

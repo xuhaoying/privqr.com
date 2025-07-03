@@ -146,7 +146,6 @@ export default function ThreeDPageEnhanced() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <MagicCard className="h-fit">
-            <BorderBeam size={250} duration={15} />
             <CardHeader>
               <CardTitle className="text-2xl mb-4 flex items-center gap-2">
                 <Box className="w-6 h-6 text-brand-500" />

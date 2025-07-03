@@ -191,7 +191,6 @@ export default function CryptoPageEnhanced() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <MagicCard className="h-fit">
-            <BorderBeam size={250} duration={15} />
             <CardHeader>
               <CardTitle className="text-2xl mb-4">Generate Crypto QR Code</CardTitle>
               

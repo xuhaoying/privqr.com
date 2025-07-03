@@ -158,7 +158,6 @@ export default function MatterPageEnhanced() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <MagicCard className="h-fit">
-            <BorderBeam size={250} duration={15} />
             <CardHeader>
               <CardTitle className="text-2xl mb-4">Generate Matter QR Code</CardTitle>
             </CardHeader>
@@ -238,11 +237,11 @@ export default function MatterPageEnhanced() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 }}
-                  className="bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-lg p-4 mt-6"
+                  className="bg-brand-50 border border-brand-200 rounded-lg p-4 mt-6"
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <Zap className="w-5 h-5 text-brand-600 dark:text-brand-400" />
-                    <h3 className="text-sm font-medium text-brand-800 dark:text-brand-300">TLV Generation Options</h3>
+                    <Zap className="w-5 h-5 text-brand-600" />
+                    <h3 className="text-sm font-medium text-brand-800">TLV Generation Options</h3>
                   </div>
                   <div className="space-y-3">
                     <motion.label 
@@ -256,7 +255,7 @@ export default function MatterPageEnhanced() {
                         onChange={(e) => setIncludeVersion(e.target.checked)}
                         className="mr-3 text-brand-600 rounded focus:ring-brand-500"
                       />
-                      <span className="text-sm text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200 transition-colors">Include Version Info</span>
+                      <span className="text-sm text-brand-700 group-hover:text-brand-800 transition-colors">Include Version Info</span>
                     </motion.label>
                     
                     <motion.label 
@@ -270,7 +269,7 @@ export default function MatterPageEnhanced() {
                         onChange={(e) => setValidateVidPid(e.target.checked)}
                         className="mr-3 text-brand-600 rounded focus:ring-brand-500"
                       />
-                      <span className="text-sm text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200 transition-colors">Validate VID/PID Against CSA Database</span>
+                      <span className="text-sm text-brand-700 group-hover:text-brand-800 transition-colors">Validate VID/PID Against CSA Database</span>
                     </motion.label>
                     
                     <motion.label 
@@ -284,7 +283,7 @@ export default function MatterPageEnhanced() {
                         onChange={(e) => setGenerateNdef(e.target.checked)}
                         className="mr-3 text-brand-600 rounded focus:ring-brand-500"
                       />
-                      <span className="text-sm text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200 transition-colors">Generate NFC NDEF Payload</span>
+                      <span className="text-sm text-brand-700 group-hover:text-brand-800 transition-colors">Generate NFC NDEF Payload</span>
                     </motion.label>
                   </div>
                 </motion.div>
@@ -297,19 +296,19 @@ export default function MatterPageEnhanced() {
                       exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.3 }}
                       className={`mt-6 p-4 rounded-lg border ${validation.valid 
-                        ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800' 
-                        : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800'
+                        ? 'bg-green-50 border-green-200' 
+                        : 'bg-red-50 border-red-200'
                       }`}
                     >
                       <div className="flex items-center gap-2 mb-3">
                         {validation.valid ? (
-                          <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400" />
+                          <CheckCircle2 className="w-5 h-5 text-green-600" />
                         ) : (
-                          <AlertTriangle className="w-5 h-5 text-red-600 dark:text-red-400" />
+                          <AlertTriangle className="w-5 h-5 text-red-600" />
                         )}
                         <h3 className={`text-sm font-medium ${validation.valid 
-                          ? 'text-green-800 dark:text-green-300' 
-                          : 'text-red-800 dark:text-red-300'
+                          ? 'text-green-800' 
+                          : 'text-red-800'
                         }`}>
                           Validation {validation.valid ? 'Passed' : 'Failed'}
                         </h3>
@@ -317,7 +316,7 @@ export default function MatterPageEnhanced() {
                       
                       {validation.errors.length > 0 && (
                         <div className="mb-3">
-                          <p className="text-sm font-medium text-red-700 dark:text-red-300 mb-1">Errors:</p>
+                          <p className="text-sm font-medium text-red-700 mb-1">Errors:</p>
                           <ul className="space-y-1">
                             {validation.errors.map((error, idx) => (
                               <motion.li 
@@ -325,7 +324,7 @@ export default function MatterPageEnhanced() {
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="text-sm text-red-600 dark:text-red-400 flex items-start gap-1"
+                                className="text-sm text-red-600 flex items-start gap-1"
                               >
                                 <span className="text-red-500">•</span>
                                 <span>{error}</span>
@@ -337,7 +336,7 @@ export default function MatterPageEnhanced() {
                       
                       {validation.warnings.length > 0 && (
                         <div>
-                          <p className="text-sm font-medium text-amber-700 dark:text-amber-300 mb-1">Warnings:</p>
+                          <p className="text-sm font-medium text-amber-700 mb-1">Warnings:</p>
                           <ul className="space-y-1">
                             {validation.warnings.map((warning, idx) => (
                               <motion.li 
@@ -345,7 +344,7 @@ export default function MatterPageEnhanced() {
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="text-sm text-amber-600 dark:text-amber-400 flex items-start gap-1"
+                                className="text-sm text-amber-600 flex items-start gap-1"
                               >
                                 <span className="text-amber-500">•</span>
                                 <span>{warning}</span>
@@ -385,7 +384,7 @@ export default function MatterPageEnhanced() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         onClick={handleDownloadReport}
-                        className="w-full px-4 py-2 bg-white  text-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 flex items-center justify-center gap-2"
+                        className="w-full px-4 py-2 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-200 flex items-center justify-center gap-2"
                       >
                         <Download className="w-4 h-4" />
                         Download Validation Report
@@ -421,8 +420,8 @@ export default function MatterPageEnhanced() {
         >
           <MagicCard className="p-6">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-amber-100 dark:bg-amber-900/30 rounded-full">
-                <Zap className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+              <div className="p-3 bg-amber-100 rounded-full">
+                <Zap className="w-6 h-6 text-amber-600" />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">
@@ -443,8 +442,8 @@ export default function MatterPageEnhanced() {
         >
           <MagicCard className="p-6">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-brand-100 dark:bg-brand-900/30 rounded-full">
-                <Smartphone className="w-6 h-6 text-brand-600 dark:text-brand-400" />
+              <div className="p-3 bg-brand-100 rounded-full">
+                <Smartphone className="w-6 h-6 text-brand-600" />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">

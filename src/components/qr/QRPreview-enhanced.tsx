@@ -72,7 +72,6 @@ export function QRPreviewEnhanced({ result, loading, label }: QRPreviewEnhancedP
 
   return (
     <MagicCard className="relative overflow-hidden">
-      <BorderBeam size={300} duration={12} />
       
       <div className="p-8 text-center">
         <motion.div
