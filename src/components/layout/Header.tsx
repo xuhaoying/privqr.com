@@ -70,7 +70,7 @@ export function Header() {
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link, index) => (
               <motion.div
                 key={link.href}
@@ -80,10 +80,10 @@ export function Header() {
               >
                 <Link
                   href={link.href}
-                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 group ${
+                  className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 group ${
                     pathname === link.href
-                      ? 'bg-brand-50 text-brand-800 border-b-2 border-brand-500 shadow-sm'
-                      : 'text-gray-700 hover:bg-brand-50 hover:text-brand-700'
+                      ? 'text-brand-700 font-semibold'
+                      : 'text-gray-700 hover:text-brand-700'
                   }`}
                 >
                   <span className="relative z-10 flex items-center gap-1">
@@ -95,7 +95,7 @@ export function Header() {
                   {pathname === link.href && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-brand-50 rounded-lg border-b-2 border-brand-500"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-500"
                       initial={false}
                       transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     />
@@ -153,9 +153,9 @@ export function Header() {
               <Link
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors relative ${
                   pathname === link.href
-                    ? 'bg-brand-50 text-brand-800 border-l-4 border-brand-500'
+                    ? 'text-brand-700 font-semibold bg-brand-50'
                     : 'text-gray-700 hover:bg-brand-50 hover:text-brand-700'
                 }`}
               >
@@ -165,6 +165,9 @@ export function Header() {
                     <span className="text-sm opacity-75">{link.badge}</span>
                   )}
                 </span>
+                {pathname === link.href && (
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-500 rounded-r-sm" />
+                )}
               </Link>
             </motion.div>
           ))}
