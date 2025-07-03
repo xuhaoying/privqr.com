@@ -7,7 +7,6 @@ import { Input } from '@/components/ui/input';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { QRPreviewEnhanced } from '@/components/qr/QRPreview-enhanced';
 import { AnimatedGradientText } from '@/components/magicui/animated-gradient-text';
-import { BorderBeam } from '@/components/magicui/border-beam';
 import { MagicCard } from '@/components/magicui/magic-card';
 import { TextEffect } from '@/components/magicui/text-effect';
 import NumberTicker from '@/components/magicui/number-ticker';

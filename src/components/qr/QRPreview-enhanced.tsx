@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { QRGenerationResult } from '@/types/qr';
-import { BorderBeam } from '@/components/magicui/border-beam';
 import { LoadingDots } from '@/components/magicui/loading-dots';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { MagicCard } from '@/components/magicui/magic-card';

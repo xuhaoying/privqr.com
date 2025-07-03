@@ -19,9 +19,6 @@ const BentoCard = dynamic(() => import('@/components/ui/bento-grid').then(mod =>
   loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-48" />
 });
 
-const BorderBeam = dynamic(() => import('@/components/magicui/border-beam').then(mod => ({ default: mod.BorderBeam })), {
-  ssr: false
-});
 
 const AnimatedList = dynamic(() => import('@/components/magicui/animated-list').then(mod => ({ default: mod.AnimatedList })), {
   ssr: false
