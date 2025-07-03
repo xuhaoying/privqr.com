@@ -2,16 +2,34 @@
 
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { BentoGrid, BentoCard } from '@/components/ui/bento-grid';
-import { ShimmerButton } from '@/components/ui/shimmer-button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useRef, Suspense } from 'react';
+import dynamic from 'next/dynamic';
 import { Bitcoin, Wifi, Upload, Printer, Shield, Zap, Globe } from 'lucide-react';
 import { AnimatedGradientText } from '@/components/magicui/animated-gradient-text';
 import { TextEffect } from '@/components/magicui/text-effect';
-import { BorderBeam } from '@/components/magicui/border-beam';
-import { AnimatedList } from '@/components/magicui/animated-list';
-import { FAQSchema } from '@/components/seo/StructuredData';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+// Dynamic imports for heavy components
+const BentoGrid = dynamic(() => import('@/components/ui/bento-grid').then(mod => ({ default: mod.BentoGrid })), {
+  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 rounded-lg h-96" />
+});
+
+const BentoCard = dynamic(() => import('@/components/ui/bento-grid').then(mod => ({ default: mod.BentoCard })), {
+  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 rounded-lg h-48" />
+});
+
+const BorderBeam = dynamic(() => import('@/components/magicui/border-beam').then(mod => ({ default: mod.BorderBeam })), {
+  ssr: false
+});
+
+const AnimatedList = dynamic(() => import('@/components/magicui/animated-list').then(mod => ({ default: mod.AnimatedList })), {
+  ssr: false
+});
+
+const FAQSchema = dynamic(() => import('@/components/seo/StructuredData').then(mod => ({ default: mod.FAQSchema })), {
+  ssr: true
+});
 
 const features = [
   {
@@ -350,7 +368,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <FAQSchema />
+      <Suspense fallback={null}>
+        <FAQSchema />
+      </Suspense>
     </div>
   );
 }

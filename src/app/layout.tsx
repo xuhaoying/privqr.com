@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Layout } from "@/components/layout/Layout";
 import { OrganizationSchema, WebAppSchema } from "@/components/seo/StructuredData";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -85,7 +87,10 @@ export default function RootLayout({
         <WebAppSchema />
       </head>
       <body className={`${inter.className} antialiased`}>
-        <Layout>{children}</Layout>
+        <ErrorBoundary>
+          <Layout>{children}</Layout>
+          <ServiceWorkerRegistration />
+        </ErrorBoundary>
       </body>
     </html>
   );

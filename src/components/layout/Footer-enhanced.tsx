@@ -26,7 +26,6 @@ const footerLinks = {
   ],
   social: [
     { href: 'https://github.com/xuhaoying/privqr.com', icon: Github, label: 'GitHub' },
-    { href: '#', icon: Twitter, label: 'Twitter' },
     { href: 'mailto:support@privqr.com', icon: Mail, label: 'Email' },
   ]
 };
