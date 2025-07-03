@@ -82,7 +82,7 @@ export function Header() {
                   href={link.href}
                   className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 group ${
                     pathname === link.href
-                      ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/20'
+                      ? 'bg-brand-50 text-brand-800 border-b-2 border-brand-500 shadow-sm'
                       : 'text-gray-700 hover:bg-brand-50 hover:text-brand-700'
                   }`}
                 >
@@ -95,7 +95,7 @@ export function Header() {
                   {pathname === link.href && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-brand-500 rounded-lg"
+                      className="absolute inset-0 bg-brand-50 rounded-lg border-b-2 border-brand-500"
                       initial={false}
                       transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     />
@@ -155,7 +155,7 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                   pathname === link.href
-                    ? 'bg-brand-500 text-white'
+                    ? 'bg-brand-50 text-brand-800 border-l-4 border-brand-500'
                     : 'text-gray-700 hover:bg-brand-50 hover:text-brand-700'
                 }`}
               >
