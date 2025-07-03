@@ -98,7 +98,7 @@ export function StructuredData({ type = 'organization', data }: StructuredDataPr
             "name": "Are there any usage limits?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Free tier includes 50 QR codes per day and batch processing up to 20 codes. All limits are enforced locally for privacy."
+              "text": "No usage limits! priv QR is completely free and unlimited. All QR code generation happens in your browser, so you can generate as many codes as you need."
             }
           },
           {

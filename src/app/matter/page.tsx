@@ -10,19 +10,13 @@ import { AnimatedGradientText } from '@/components/magicui/animated-gradient-tex
 import { BorderBeam } from '@/components/magicui/border-beam';
 import { MagicCard } from '@/components/magicui/magic-card';
 import { TextEffect } from '@/components/magicui/text-effect';
-import NumberTicker from '@/components/magicui/number-ticker';
 import { MatterDeviceInfo, MatterValidationResult } from '@/types/matter';
 import { QRGenerationResult } from '@/types/qr';
 import { MatterQRGenerator } from '@/lib/matter/generator';
 import { QRGenerator } from '@/lib/qr/generator';
-import { Cpu, Zap, Shield, Radio, Smartphone, CheckCircle2, AlertTriangle, Download } from 'lucide-react';
+import { Cpu, Zap, Shield, AlertTriangle, Download, CheckCircle2, Smartphone } from 'lucide-react';
 
-const matterStats = [
-  { label: 'Devices Paired', value: 2847, icon: Smartphone },
-  { label: 'IoT Networks', value: 156, icon: Radio },
-  { label: 'Success Rate', value: 98.5, icon: CheckCircle2, suffix: '%' },
-  { label: 'Avg Pair Time', value: 12, icon: Zap, suffix: 's' },
-];
+// Removed fake stats - all pairing happens client-side
 
 export default function MatterPageEnhanced() {
   const [loading, setLoading] = useState(false);
@@ -152,32 +146,7 @@ export default function MatterPageEnhanced() {
         </TextEffect>
       </motion.div>
 
-      {/* Stats Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-      >
-        {matterStats.map((stat, index) => (
-          <MagicCard key={stat.label} className="text-center p-6">
-            <div className="flex justify-center mb-3">
-              <stat.icon className="w-8 h-8 text-brand-500" />
-            </div>
-            <div className="text-2xl font-bold text-black dark:text-white mb-1">
-              <NumberTicker 
-                value={stat.value} 
-                delay={index * 0.2}
-                decimalPlaces={stat.suffix === '%' || stat.suffix === 's' ? 1 : 0}
-              />
-              {stat.suffix}
-            </div>
-            <div className="text-sm text-black dark:text-white">
-              {stat.label}
-            </div>
-          </MagicCard>
-        ))}
-      </motion.div>
+      {/* Removed fake stats section - all Matter pairing happens client-side */}
 
 
       <div className="grid lg:grid-cols-2 gap-8">

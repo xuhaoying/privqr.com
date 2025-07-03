@@ -85,13 +85,7 @@ const trustStats = [
   { icon: '🆓', number: '0$', text: 'Forever Free' },
 ];
 
-const recentActivity = [
-  { icon: '💳', text: 'Bitcoin payment QR generated', time: '2s ago' },
-  { icon: '📱', text: 'Matter device paired successfully', time: '5s ago' },
-  { icon: '📊', text: 'Bulk CSV processed (50 items)', time: '12s ago' },
-  { icon: '🏗️', text: '3D QR model downloaded', time: '18s ago' },
-  { icon: '⚡', text: 'Lightning invoice created', time: '25s ago' },
-];
+// Removed fake activity feed - all QR generation happens client-side with complete privacy
 
 // Metadata moved to layout.tsx for client components
 
@@ -303,22 +297,35 @@ export default function HomePage() {
                 <BorderBeam size={300} duration={15} />
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                    Live Activity Feed
+                    <Shield className="w-5 h-5 text-brand-500" />
+                    Privacy Guarantee
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <AnimatedList className="space-y-3" delay={2000}>
-                    {recentActivity.map((activity, index) => (
-                      <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
-                        <span className="text-xl">{activity.icon}</span>
-                        <div className="flex-1">
-                          <p className="text-sm font-medium">{activity.text}</p>
-                          <p className="text-xs text-black">{activity.time}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </AnimatedList>
+                <CardContent className="space-y-4">
+                  <div className="p-4 bg-brand-50 dark:bg-brand-900/20 rounded-lg">
+                    <h4 className="font-semibold text-brand-900 dark:text-brand-100 mb-2">
+                      Zero Data Collection
+                    </h4>
+                    <p className="text-sm text-brand-700 dark:text-brand-300">
+                      All QR codes are generated entirely in your browser. We never see, store, or transmit your data.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
+                    <h4 className="font-semibold text-emerald-900 dark:text-emerald-100 mb-2">
+                      Open Source
+                    </h4>
+                    <p className="text-sm text-emerald-700 dark:text-emerald-300">
+                      Our code is 100% transparent and auditable. Verify our privacy claims yourself on GitHub.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                    <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+                      No Analytics
+                    </h4>
+                    <p className="text-sm text-blue-700 dark:text-blue-300">
+                      We don&apos;t track usage, store statistics, or monitor activity. Your privacy is absolute.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             </div>

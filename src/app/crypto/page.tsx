@@ -10,12 +10,11 @@ import { AnimatedGradientText } from '@/components/magicui/animated-gradient-tex
 import { BorderBeam } from '@/components/magicui/border-beam';
 import { MagicCard } from '@/components/magicui/magic-card';
 import { TextEffect } from '@/components/magicui/text-effect';
-import NumberTicker from '@/components/magicui/number-ticker';
 import { CryptoType, BitcoinPaymentRequest, EthereumPaymentRequest, LightningInvoice } from '@/types/crypto';
 import { QRGenerationResult } from '@/types/qr';
 import { CryptoQRGenerator } from '@/lib/crypto/generator';
 import { QRGenerator } from '@/lib/qr/generator';
-import { Bitcoin, Zap, Cpu, Shield, TrendingUp, Globe } from 'lucide-react';
+import { Bitcoin, Zap, Cpu, Shield, Globe } from 'lucide-react';
 
 type Tab = 'bitcoin' | 'ethereum' | 'lightning';
 
@@ -43,12 +42,7 @@ const tabs = [
   },
 ];
 
-const cryptoStats = [
-  { label: 'BTC Generated', value: 12847, icon: Bitcoin },
-  { label: 'ETH Addresses', value: 8923, icon: Cpu },
-  { label: 'Lightning Invoices', value: 15602, icon: Zap },
-  { label: 'Success Rate', value: 99.9, icon: TrendingUp, suffix: '%' },
-];
+// Removed fake stats - all generation happens client-side
 
 export default function CryptoPageEnhanced() {
   const [activeTab, setActiveTab] = useState<Tab>('bitcoin');
@@ -186,32 +180,7 @@ export default function CryptoPageEnhanced() {
         </TextEffect>
       </motion.div>
 
-      {/* Stats Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-      >
-        {cryptoStats.map((stat, index) => (
-          <MagicCard key={stat.label} className="text-center p-6">
-            <div className="flex justify-center mb-3">
-              <stat.icon className="w-8 h-8 text-brand-500" />
-            </div>
-            <div className="text-2xl font-bold text-black dark:text-white mb-1">
-              <NumberTicker 
-                value={stat.value} 
-                delay={index * 0.2}
-                decimalPlaces={stat.suffix === '%' ? 1 : 0}
-              />
-              {stat.suffix}
-            </div>
-            <div className="text-sm text-black dark:text-white">
-              {stat.label}
-            </div>
-          </MagicCard>
-        ))}
-      </motion.div>
+      {/* Removed fake stats section - all QR generation happens client-side */}
 
 
       <div className="grid lg:grid-cols-2 gap-8">

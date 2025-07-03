@@ -10,18 +10,12 @@ import { AnimatedGradientText } from '@/components/magicui/animated-gradient-tex
 import { BorderBeam } from '@/components/magicui/border-beam';
 import { MagicCard } from '@/components/magicui/magic-card';
 import { TextEffect } from '@/components/magicui/text-effect';
-import NumberTicker from '@/components/magicui/number-ticker';
 import { BatchQRItem } from '@/types/qr';
 import { BatchProcessor, BatchProcessOptions } from '@/lib/batch/processor';
 import { UsageTracker } from '@/lib/utils/usage';
-import { Upload, FileText, Zap, Package, CheckCircle2, AlertCircle, Download, Layers } from 'lucide-react';
+import { Upload, FileText, AlertCircle, Download, Zap, Package, CheckCircle2, Layers } from 'lucide-react';
 
-const bulkStats = [
-  { label: 'Batch Jobs', value: 1247, icon: Package },
-  { label: 'QR Codes', value: 28439, icon: Layers },
-  { label: 'Avg Speed', value: 47, icon: Zap, suffix: '/min' },
-  { label: 'Success Rate', value: 99.2, icon: CheckCircle2, suffix: '%' },
-];
+// Removed fake stats - all processing happens client-side
 
 export default function BulkPageEnhanced() {
   const [file, setFile] = useState<File | null>(null);
@@ -142,32 +136,7 @@ export default function BulkPageEnhanced() {
         </TextEffect>
       </motion.div>
 
-      {/* Stats Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-      >
-        {bulkStats.map((stat, index) => (
-          <MagicCard key={stat.label} className="text-center p-6">
-            <div className="flex justify-center mb-3">
-              <stat.icon className="w-8 h-8 text-brand-500" />
-            </div>
-            <div className="text-2xl font-bold text-black dark:text-white mb-1">
-              <NumberTicker 
-                value={stat.value} 
-                delay={index * 0.2}
-                decimalPlaces={stat.suffix === '%' ? 1 : 0}
-              />
-              {stat.suffix}
-            </div>
-            <div className="text-sm text-black dark:text-white">
-              {stat.label}
-            </div>
-          </MagicCard>
-        ))}
-      </motion.div>
+      {/* Removed fake stats section - all bulk processing happens client-side */}
 
       <QuotaInfo />
 
@@ -237,7 +206,7 @@ export default function BulkPageEnhanced() {
                 >
                   <p className="text-xs text-amber-800 dark:text-amber-300">
                     Format: type,data,label<br />
-                    Max 20 rows in free version
+                    No limits - process as many QR codes as you need!
                   </p>
                 </motion.div>
               </motion.div>

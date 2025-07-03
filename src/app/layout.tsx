@@ -71,18 +71,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEXWW1VQ76"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-MEXWW1VQ76');
-            `,
-          }}
-        />
+        {/* No analytics - we respect your privacy */}
         <OrganizationSchema />
         <WebAppSchema />
       </head>
