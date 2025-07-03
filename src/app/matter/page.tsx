@@ -7,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { AnimatedGradientText } from '@/components/magicui/animated-gradient-text';
-import { BorderBeam } from '@/components/magicui/border-beam';
 import { MagicCard } from '@/components/magicui/magic-card';
 import { TextEffect } from '@/components/magicui/text-effect';
 import { MatterDeviceInfo, MatterValidationResult } from '@/types/matter';
