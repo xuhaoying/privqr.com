@@ -140,8 +140,10 @@ export class QRGenerator {
 
   async generateSVG(options: QROptions): Promise<QRGenerationResult> {
     try {
-      const qrSvg = require('qrcode-svg');
-      const svg = new qrSvg({
+      // Use dynamic import for client-side compatibility
+      const QRSvgModule = await import('qrcode-svg');
+      const QRSvg = QRSvgModule.default || QRSvgModule;
+      const svg = new QRSvg({
         content: options.data,
         padding: options.margin || 4,
         width: options.size || 256,
