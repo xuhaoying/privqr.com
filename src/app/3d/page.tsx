@@ -12,7 +12,8 @@ import { TextEffect } from '@/components/magicui/text-effect';
 import NumberTicker from '@/components/magicui/number-ticker';
 import { QRGenerationResult } from '@/types/qr';
 import { QRGenerator } from '@/lib/qr/generator';
-import { Printer, Box, Layers, Ruler, Download, CheckCircle2, Settings, Zap } from 'lucide-react';
+import { Printer, Box, Layers, Ruler, Download, CheckCircle2, Settings, Zap, BookOpen } from 'lucide-react';
+import Link from 'next/link';
 
 const threeDStats = [
   { label: '3D Models', value: 847, icon: Box },
@@ -102,11 +103,15 @@ export default function ThreeDPageEnhanced() {
         <TextEffect
           preset="fade-in-blur"
           as="p"
-          className="text-xl text-gray-900 max-w-3xl mx-auto mb-8"
+          className="text-xl text-gray-900 max-w-3xl mx-auto mb-6"
         >
           Generate physical QR codes optimized for 3D printing with customizable thickness, 
           dimensions, and high error correction for reliable scanning.
         </TextEffect>
+        <Link href="/guides/3d" className="inline-flex items-center gap-2 px-4 py-2 bg-brand-100 text-brand-700 rounded-lg hover:bg-brand-200 transition-colors">
+          <BookOpen className="w-4 h-4" />
+          <span className="font-medium">Read User Guide</span>
+        </Link>
       </motion.div>
 
       {/* Stats Section */}

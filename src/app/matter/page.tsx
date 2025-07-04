@@ -13,7 +13,8 @@ import { MatterDeviceInfo, MatterValidationResult } from '@/types/matter';
 import { QRGenerationResult } from '@/types/qr';
 import { MatterQRGenerator } from '@/lib/matter/generator';
 import { QRGenerator } from '@/lib/qr/generator';
-import { Cpu, Zap, Shield, AlertTriangle, Download, CheckCircle2, Smartphone } from 'lucide-react';
+import { Cpu, Zap, Shield, AlertTriangle, Download, CheckCircle2, Smartphone, BookOpen } from 'lucide-react';
+import Link from 'next/link';
 
 // Removed fake stats - all pairing happens client-side
 
@@ -138,11 +139,15 @@ export default function MatterPageEnhanced() {
         <TextEffect
           preset="fade-in-blur"
           as="p"
-          className="text-xl text-gray-900 max-w-3xl mx-auto mb-8"
+          className="text-xl text-gray-900 max-w-3xl mx-auto mb-6"
         >
           Generate CSA-compliant Matter commissioning QR codes for seamless IoT device pairing. 
           Full TLV validation and industry-standard compatibility included.
         </TextEffect>
+        <Link href="/guides/matter" className="inline-flex items-center gap-2 px-4 py-2 bg-brand-100 text-brand-700 rounded-lg hover:bg-brand-200 transition-colors">
+          <BookOpen className="w-4 h-4" />
+          <span className="font-medium">Read User Guide</span>
+        </Link>
       </motion.div>
 
       {/* Removed fake stats section - all Matter pairing happens client-side */}

@@ -19,6 +19,7 @@ export function Header() {
     { href: '/matter', label: 'Matter', badge: '⚡' },
     { href: '/bulk', label: 'Bulk', badge: '💎' },
     { href: '/3d', label: '3D Print', badge: '🚀' },
+    { href: '/guides', label: 'Guides', badge: '📖' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ];

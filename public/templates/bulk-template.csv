@@ -1,0 +1,11 @@
+type,data,label
+url,https://example.com/product1,Product 1 Website
+url,https://example.com/product2,Product 2 Website
+text,SKU-12345,Inventory Item A
+text,SKU-67890,Inventory Item B
+email,support@company.com,Customer Support
+email,sales@company.com,Sales Contact
+phone,+1234567890,Main Office
+phone,+9876543210,Support Hotline
+wifi,MyNetwork,password123,WPA,Office WiFi
+wifi,GuestNetwork,guest2024,WPA,Guest WiFi

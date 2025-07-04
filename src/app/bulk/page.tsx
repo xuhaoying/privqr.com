@@ -12,7 +12,8 @@ import { TextEffect } from '@/components/magicui/text-effect';
 import { BatchQRItem } from '@/types/qr';
 import { BatchProcessor, BatchProcessOptions } from '@/lib/batch/processor';
 import { UsageTracker } from '@/lib/utils/usage';
-import { Upload, FileText, AlertCircle, Download, Zap, Package, CheckCircle2, Layers } from 'lucide-react';
+import { Upload, FileText, AlertCircle, Download, Zap, Package, CheckCircle2, Layers, BookOpen } from 'lucide-react';
+import Link from 'next/link';
 
 // Removed fake stats - all processing happens client-side
 
@@ -128,11 +129,15 @@ export default function BulkPageEnhanced() {
         <TextEffect
           preset="fade-in-blur"
           as="p"
-          className="text-xl text-gray-900 max-w-3xl mx-auto mb-8"
+          className="text-xl text-gray-900 max-w-3xl mx-auto mb-6"
         >
           Process hundreds of QR codes simultaneously with our enterprise-grade batch generator. 
           Upload CSV, customize settings, and download your complete collection.
         </TextEffect>
+        <Link href="/guides/bulk" className="inline-flex items-center gap-2 px-4 py-2 bg-brand-100 text-brand-700 rounded-lg hover:bg-brand-200 transition-colors">
+          <BookOpen className="w-4 h-4" />
+          <span className="font-medium">Read User Guide</span>
+        </Link>
       </motion.div>
 
       {/* Removed fake stats section - all bulk processing happens client-side */}

@@ -13,7 +13,8 @@ import { CryptoType, BitcoinPaymentRequest, EthereumPaymentRequest, LightningInv
 import { QRGenerationResult } from '@/types/qr';
 import { CryptoQRGenerator } from '@/lib/crypto/generator';
 import { QRGenerator } from '@/lib/qr/generator';
-import { Bitcoin, Zap, Cpu, Shield, Globe } from 'lucide-react';
+import { Bitcoin, Zap, Cpu, Shield, Globe, BookOpen } from 'lucide-react';
+import Link from 'next/link';
 
 type Tab = 'bitcoin' | 'ethereum' | 'lightning';
 
@@ -172,11 +173,15 @@ export default function CryptoPageEnhanced() {
         <TextEffect
           preset="fade-in-blur"
           as="p"
-          className="text-xl text-gray-900 max-w-3xl mx-auto mb-8"
+          className="text-xl text-gray-900 max-w-3xl mx-auto mb-6"
         >
           Generate professional cryptocurrency payment QR codes with full compliance to industry standards. 
           Support for Bitcoin (BIP-21), Ethereum (EIP-681), and Lightning Network (BOLT-11).
         </TextEffect>
+        <Link href="/guides/crypto" className="inline-flex items-center gap-2 px-4 py-2 bg-brand-100 text-brand-700 rounded-lg hover:bg-brand-200 transition-colors">
+          <BookOpen className="w-4 h-4" />
+          <span className="font-medium">Read User Guide</span>
+        </Link>
       </motion.div>
 
       {/* Removed fake stats section - all QR generation happens client-side */}
