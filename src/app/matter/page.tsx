@@ -163,21 +163,21 @@ export default function MatterPageEnhanced() {
 
             <CardContent>
           
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.1 }}
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
                     <Cpu className="w-5 h-5 text-brand-500" />
                     Device Information
                   </h3>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
                       Vendor ID (VID) *
                     </label>
                     <Input
@@ -189,8 +189,8 @@ export default function MatterPageEnhanced() {
                     />
                   </div>
             
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
                       Product ID (PID) *
                     </label>
                     <Input
@@ -202,8 +202,8 @@ export default function MatterPageEnhanced() {
                     />
                   </div>
             
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
                       Setup PIN *
                     </label>
                     <Input
@@ -214,11 +214,11 @@ export default function MatterPageEnhanced() {
                       maxLength={8}
                       className="font-mono"
                     />
-                    <p className="text-xs text-gray-900 mt-1">8 digits, avoid sequential or repeated numbers</p>
+                    <p className="text-xs text-gray-900 mt-2">8 digits, avoid sequential or repeated numbers</p>
                   </div>
             
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
                       Discriminator *
                     </label>
                     <Input
@@ -228,7 +228,7 @@ export default function MatterPageEnhanced() {
                       placeholder="3840"
                       className="font-mono"
                     />
-                    <p className="text-xs text-gray-900 mt-1">0-4095 (12 bits)</p>
+                    <p className="text-xs text-gray-900 mt-2">0-4095 (12 bits)</p>
                   </div>
                 </div>
 
@@ -236,13 +236,13 @@ export default function MatterPageEnhanced() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 }}
-                  className="bg-brand-50 border border-brand-200 rounded-lg p-4 mt-6"
+                  className="bg-brand-50 border border-brand-200 rounded-lg p-6 mt-8"
                 >
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2 mb-6">
                     <Zap className="w-5 h-5 text-brand-600" />
                     <h3 className="text-sm font-medium text-brand-800">TLV Generation Options</h3>
                   </div>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     <motion.label 
                       className="flex items-center cursor-pointer group"
                       whileHover={{ x: 2 }}
@@ -252,9 +252,9 @@ export default function MatterPageEnhanced() {
                         type="checkbox"
                         checked={includeVersion}
                         onChange={(e) => setIncludeVersion(e.target.checked)}
-                        className="mr-3 text-brand-600 rounded focus:ring-brand-500"
+                        className="mr-4 text-brand-600 rounded focus:ring-brand-500 w-4 h-4"
                       />
-                      <span className="text-sm text-brand-700 group-hover:text-brand-800 transition-colors">Include Version Info</span>
+                      <span className="text-sm font-medium text-brand-700 group-hover:text-brand-800 transition-colors">Include Version Info</span>
                     </motion.label>
                     
                     <motion.label 
@@ -266,9 +266,9 @@ export default function MatterPageEnhanced() {
                         type="checkbox"
                         checked={validateVidPid}
                         onChange={(e) => setValidateVidPid(e.target.checked)}
-                        className="mr-3 text-brand-600 rounded focus:ring-brand-500"
+                        className="mr-4 text-brand-600 rounded focus:ring-brand-500 w-4 h-4"
                       />
-                      <span className="text-sm text-brand-700 group-hover:text-brand-800 transition-colors">Validate VID/PID Against CSA Database</span>
+                      <span className="text-sm font-medium text-brand-700 group-hover:text-brand-800 transition-colors">Validate VID/PID Against CSA Database</span>
                     </motion.label>
                     
                     <motion.label 
@@ -280,9 +280,9 @@ export default function MatterPageEnhanced() {
                         type="checkbox"
                         checked={generateNdef}
                         onChange={(e) => setGenerateNdef(e.target.checked)}
-                        className="mr-3 text-brand-600 rounded focus:ring-brand-500"
+                        className="mr-4 text-brand-600 rounded focus:ring-brand-500 w-4 h-4"
                       />
-                      <span className="text-sm text-brand-700 group-hover:text-brand-800 transition-colors">Generate NFC NDEF Payload</span>
+                      <span className="text-sm font-medium text-brand-700 group-hover:text-brand-800 transition-colors">Generate NFC NDEF Payload</span>
                     </motion.label>
                   </div>
                 </motion.div>
