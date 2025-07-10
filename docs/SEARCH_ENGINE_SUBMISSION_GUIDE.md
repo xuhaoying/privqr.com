@@ -2,16 +2,33 @@
 
 本指南将帮助您将 priv QR 网站提交到主流搜索引擎，以提高网站的可见性和搜索排名。
 
+## 🚀 快速提交 - Google (最重要)
+
+**站点地图已准备就绪！** 现在立即提交：
+
+1. **打开**: https://search.google.com/search-console
+2. **登录**: 使用您的 Google 账号
+3. **添加属性**: 输入 `https://privqr.com`
+4. **验证**: 选择 HTML 标签方法
+5. **提交站点地图**: 
+   - 左侧菜单 → "站点地图"
+   - 输入: `sitemap.xml`
+   - 点击"提交"
+
+✅ **您的站点地图URL**: https://privqr.com/sitemap.xml  
+✅ **Robots.txt**: https://privqr.com/robots.txt  
+✅ **状态**: 两个文件都可访问 (已验证)
+
 ## 📋 提交前准备
 
-### 1. 验证网站基础设施
+### 1. 验证网站基础设施 ✅ 已完成
 - [x] 确保网站已部署到生产环境 (https://privqr.com)
 - [x] 验证 SSL 证书正常工作
 - [x] 检查所有页面可正常访问
-- [x] 确认 sitemap 文件可访问:
-  - https://privqr.com/sitemap-index.xml
-  - https://privqr.com/sitemap.xml
-  - https://privqr.com/robots.txt
+- [x] 确认文件可访问 (2025-07-10 已验证):
+  - ✅ https://privqr.com/sitemap.xml (HTTP 200)
+  - ✅ https://privqr.com/robots.txt (HTTP 200)
+  - 包含所有页面和多语言支持
 
 ### 2. 准备验证文件
 各搜索引擎需要验证网站所有权，通常有以下方式：
@@ -22,7 +39,7 @@
 
 ## 🌍 主流搜索引擎提交
 
-### 1. Google Search Console
+### 1. Google Search Console 🎯 立即行动
 **提交地址**: https://search.google.com/search-console
 
 **步骤**:
@@ -32,8 +49,12 @@
 4. 在 `src/app/layout.tsx` 的 `<head>` 中添加验证标签
 5. 验证成功后，提交 sitemap:
    - 在左侧菜单选择"站点地图"
-   - 提交 `https://privqr.com/sitemap-index.xml`
-6. 检查覆盖范围报告，修复任何错误
+   - 提交 `sitemap.xml` (只需要输入文件名)
+   - 系统会自动获取 https://privqr.com/sitemap.xml
+6. 检查提交状态:
+   - "已提交" → "成功" (通常需要几分钟)
+   - 查看"已发现的网址"数量
+7. 等待索引（24-48小时）
 
 **优化建议**:
 - 使用 URL 检查工具测试重要页面

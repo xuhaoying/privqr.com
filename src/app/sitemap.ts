@@ -102,5 +102,65 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.5,
     },
+    {
+      url: `${baseUrl}/guides`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/guides`,
+          zh: `${baseUrl}/zh/guides`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/guides/crypto`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/guides/crypto`,
+          zh: `${baseUrl}/zh/guides/crypto`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/guides/matter`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/guides/matter`,
+          zh: `${baseUrl}/zh/guides/matter`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/guides/bulk`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/guides/bulk`,
+          zh: `${baseUrl}/zh/guides/bulk`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/guides/3d`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/guides/3d`,
+          zh: `${baseUrl}/zh/guides/3d`,
+        },
+      },
+    },
   ]
 }

@@ -92,7 +92,7 @@ export default function GuidesPage() {
         </TextEffect>
         <p className="text-xl text-gray-900 max-w-3xl mx-auto">
           Everything you need to know about generating QR codes with priv QR. 
-          From basic usage to advanced features, we've got you covered.
+          From basic usage to advanced features, we&apos;ve got you covered.
         </p>
       </motion.div>
 
